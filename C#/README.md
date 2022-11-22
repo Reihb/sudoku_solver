@@ -15,5 +15,3 @@
 ### Sudoku class :
 
 *  List<char> GetCrossNumbers(char[,] Xtab, int i, int j)
-
-* 
