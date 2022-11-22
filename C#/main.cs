@@ -21,11 +21,14 @@ class Main_program
 
         SudokuAPI.ShowGrid(list);
 
-        ShowListChar(Sudoku.GetCrossNumbers(list, 0, 0));
+        Debug.ShowListChar(Sudoku.GetCrossNumbers(list, 0, 0));
 
         Console.ReadLine();
     }
+}
 
+class Debug
+{
     public static void ShowListChar(List<char> Xlist)
     {
         Console.WriteLine();
