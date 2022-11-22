@@ -12,7 +12,7 @@ namespace Sudoku_solver
 
             for(int a=0; a<Xtab.GetLength(0); a++)
             {
-                if(!res.Contains(Xtab[i,a]))
+                if((Xtab[i,a] != 0) && (!res.Contains(Xtab[i,a])))
                 {
                     res.Add(Xtab[i,a]);
                 }
@@ -20,7 +20,7 @@ namespace Sudoku_solver
 
             for(int a=0; a<Xtab.GetLength(1); a++)
             {
-                if(!res.Contains(Xtab[a,j]))
+                if((Xtab[i,a] != 0) && (!res.Contains(Xtab[a,j])))
                 {
                     res.Add(Xtab[a,j]);
                 }
