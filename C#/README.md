@@ -1,6 +1,6 @@
 **Compilation command : mcs -out:main.exe main.cs API.cs solver.cs**
 
-## Sudoku_solver_API (APi.cs) :
+## Sudoku_solver_API (API.cs) :
 
 ### SudokuAPI class :
 
