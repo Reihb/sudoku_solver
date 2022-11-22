@@ -4,8 +4,8 @@
 
 This is part of our student work at Unistra
 
-##Credits
+## Credits
 
-*Reihb
+* Reihb
 
-*Niconinio
+* Niconinio
