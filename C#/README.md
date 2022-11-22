@@ -1,6 +1,6 @@
 **Compilation command : mcs -out:main.exe main.cs API.cs solver.cs**
 
-## Sudoku_solver_API :
+## Sudoku_solver_API (APi.cs) :
 
 ### SudokuAPI class :
 
@@ -10,7 +10,7 @@
 
 * void ShowGrid(char[,] Xtab)
 
-## Sudoku_solver
+## Sudoku_solver (solver.cs) :
 
 ### Sudoku class :
 
