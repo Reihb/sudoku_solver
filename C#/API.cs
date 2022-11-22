@@ -69,7 +69,22 @@ namespace Sudoku_solver_API
         */
         public static int[,] RetrieveGrid(string Xpath)
         {
-            
+            int l=0;
+            string[] temp;
+
+            temp = File.ReadAllLines(Xpath);
+
+            int[,] res = new int[temp[0].Length,temp[0].Length];
+
+            foreach(string val in temp)
+            {
+                for(int c=0; i<val.Length; i++)
+                {
+                    res[l,c] = val[c];
+                }
+            }
+
+            return res;
         }
 
         //---------------------------------------------------------------------------------------
