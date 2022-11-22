@@ -54,6 +54,9 @@ namespace Sudoku_solver_API
             //Remove the red color of the text
             Console.ResetColor();
 
+            //Clear the console
+            Console.Clear();
+
             //Returning the directory
             return path;
         }
@@ -106,7 +109,7 @@ namespace Sudoku_solver_API
         {
             Console.WriteLine("\nSudoku grid :");
             Console.WriteLine();
-            
+
             //For each line
             for(int i=0; i<Xtab.GetLength(0); i++)
             {
