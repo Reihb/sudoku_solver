@@ -9,9 +9,12 @@ using Sudoku_solver_API;
 
 class Main_program
 {
-    int[,] list;
+    static void Main()
+    {
+        int[,] list;
 
-    list = SudokuAPI.RetrieveGrid(grid.txt);
+        list = SudokuAPI.RetrieveGrid(grid.txt);
 
-    SudokuAPI.ShowGrid(list);
+        SudokuAPI.ShowGrid(list);
+    }
 }
