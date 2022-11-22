@@ -18,5 +18,7 @@ class Main_program
         list = SudokuAPI.RetrieveGrid(path);
 
         SudokuAPI.ShowGrid(list);
+
+        Console.ReadLine();
     }
 }
