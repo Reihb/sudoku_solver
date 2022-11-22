@@ -67,20 +67,20 @@ namespace Sudoku_solver_API
         parameters :
             Xpath : string : path of the txt file
         */
-        public static int[,] RetrieveGrid(string Xpath)
+        public static char[,] RetrieveGrid(string Xpath)
         {
             int l=0;
             string[] temp;
 
             temp = File.ReadAllLines(Xpath);
 
-            int[,] res = new int[temp[0].Length,temp[0].Length];
+            char[,] res = new char[temp[0].Length,temp[0].Length];
 
             foreach(string val in temp)
             {
                 for(int c=0; c<val.Length; c++)
                 {
-                    res[l,c] = int.Parse(val[c].ToString());
+                    res[l,c] = val[c];
                 }
 
                 l++;
@@ -102,7 +102,7 @@ namespace Sudoku_solver_API
             i : int : iterator of a for loop
             j : int : iterator of a for loop
         */
-        public static void ShowGrid(int[,] Xtab)
+        public static void ShowGrid(char[,] Xtab)
         {
             //For each line
             for(int i=0; i<Xtab.GetLength(0); i++)
@@ -115,6 +115,7 @@ namespace Sudoku_solver_API
                 }
 
                 //Line break
+                Console.WriteLine();
                 Console.WriteLine();
             }
         }

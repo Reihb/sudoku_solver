@@ -11,7 +11,7 @@ class Main_program
 {
     static void Main()
     {
-        int[,] list;
+        char[,] list;
 
         string path = SudokuAPI.AskFilePath();
 
