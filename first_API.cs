@@ -25,7 +25,7 @@ namespace Sudoku_solver_API
                     col ++;
                 }
 
-                lin++
+                lin++;
             }
 
             return res;
@@ -37,7 +37,7 @@ namespace Sudoku_solver_API
             {
                 for(int j=0; j<tab.GetLength(1); j++)
                 {
-                    Console.Write("[" + tab[i,j] + "]\t"):
+                    Console.Write("[" + tab[i,j] + "]\t");
                 }
 
                 Console.WriteLine();
