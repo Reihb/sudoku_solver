@@ -21,6 +21,20 @@ class Main_program
 
         SudokuAPI.ShowGrid(list);
 
+        ShowListChar(GetCrossNumbers(list, 0, 0));
+
         Console.ReadLine();
+    }
+
+    public static void ShowListChar(List<char> Xlist)
+    {
+        Console.WriteLine();
+
+        foreach(int val in Xlist)
+        {
+            Console.Write("[" + val + "]\t");
+        }
+
+        Console.WriteLine();
     }
 }
