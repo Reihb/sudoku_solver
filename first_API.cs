@@ -8,10 +8,12 @@ namespace Sudoku_solver_API
     {
         public static int[,] RetrieveGrid(string Xpath)
         {
-            string[] txt;
+            string txt;
             int[,] res;
 
             txt = File.ReadAllLines(Xpath);
+
+            Console.WriteLine(txt);
 
         }
     }
