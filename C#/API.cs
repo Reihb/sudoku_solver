@@ -8,15 +8,15 @@ namespace Sudoku_solver_API
     {
 
         /*
-        AskDirectory : procedure
-            procedure that asks the user for a folders path until the given path is correct
+        AskFilePath : procedure
+            procedure that asks the user for a file's path until the given path is correct
 
         local :
             exit : boolean : condition of the while loop
-            directory : string : path of the directory entered by the user
+            directory : string : path of the file entered by the user
 
         return :
-            directory : string : path of the directory entered by the user
+            path : string : path of the file entered by the user
         */
         public static string AskFilePath()
         {
@@ -33,7 +33,7 @@ namespace Sudoku_solver_API
             while (!exit)
             {
                 //Prompting the user to enter a folder's path
-                Console.WriteLine("Enter a folder's path : ");
+                Console.WriteLine("Enter a file's path : ");
                 path = Console.ReadLine();
 
                 //If the folder exists
@@ -82,6 +82,7 @@ namespace Sudoku_solver_API
                 {
                     res[l,c] = val[c];
                 }
+                l++;
             }
 
             return res;
