@@ -18,26 +18,26 @@ namespace Sudoku_solver_API
         return :
             directory : string : path of the directory entered by the user
         */
-        public static string AskDirectory()
+        public static string AskFilePath()
         {
 
             //Declaration of the local variables
             bool exit;
-            string directory;
+            string path;
 
             //Initialization of the local variables
             exit = false;
-            directory = "";
+            path = "";
         
             //While exit is false
             while (!exit)
             {
                 //Prompting the user to enter a folder's path
                 Console.WriteLine("Enter a folder's path : ");
-                directory = Console.ReadLine();
+                path = Console.ReadLine();
 
                 //If the folder exists
-                if (Directory.Exists(directory))
+                if (File.Exists(path))
                 {
                     exit = true;
                 }
@@ -47,7 +47,7 @@ namespace Sudoku_solver_API
                     //Writing a warning message before asking again
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Clear();
-                    Console.WriteLine("/!\\ This folder doesn't exist | The path is incorrect /!\\");
+                    Console.WriteLine("/!\\ This file doesn't exist | The path is incorrect /!\\");
                 }
             }
 
@@ -55,7 +55,7 @@ namespace Sudoku_solver_API
             Console.ResetColor();
 
             //Returning the directory
-            return directory;
+            return file;
         }
         
         //---------------------------------------------------------------------------------------
