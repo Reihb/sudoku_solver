@@ -32,7 +32,7 @@ namespace Sudoku_solver_API
             //While exit is false
             while (!exit)
             {
-                //Prompting the user to enter a folder's path
+                //Prompting the user to enter a file's path
                 Console.WriteLine("Enter a file's path : ");
                 path = Console.ReadLine();
 
@@ -41,7 +41,7 @@ namespace Sudoku_solver_API
                 {
                     exit = true;
                 }
-                //If the fodler doesn't exist or the path is incorrect
+                //If the file doesn't exist or the path is incorrect
                 else
                 {
                     //Writing a warning message before asking again
@@ -57,7 +57,7 @@ namespace Sudoku_solver_API
             //Clear the console
             Console.Clear();
 
-            //Returning the directory
+            //Returning the file's path
             return path;
         }
         
