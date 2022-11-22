@@ -13,7 +13,7 @@ class Main_program
     {
         int[,] list;
 
-        string path = SudokuAPI.AskDirectory();
+        string path = SudokuAPI.AskFilePath();
 
         list = SudokuAPI.RetrieveGrid(path);
 
