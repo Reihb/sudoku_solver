@@ -8,13 +8,41 @@ namespace Sudoku_solver_API
     {
         public static int[,] RetrieveGrid(string Xpath)
         {
+            int lin,col;
             string[] txt;
             int[,] res;
 
             txt = File.ReadAllLines(Xpath);
 
-            Console.WriteLine(txt);
+            lin = 0;
+            col = 0;
 
+            foreach(string val in txt)
+            {
+                for(int i=0; i<val.Length; i++)
+                {
+                    res[lin,col] = val[i];
+                    col ++;
+                }
+
+                lin++
+            }
+
+            return res;
+        }
+
+        public static int[,] ShowGrid(int[,] tab)
+        {
+            for(int i=0; i<tab.GetLength(0); i++)
+            {
+                for(int j=0; j<tab.GetLength(1); j++)
+                {
+                    Console.Write("[" + tab[i,j] + "]\t"):
+                }
+
+                Console.WriteLine();
+                Console.WriteLine();
+            }
         }
     }
 }
