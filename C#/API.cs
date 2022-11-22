@@ -10,10 +10,11 @@ namespace Sudoku_solver_API
         /*
         AskDirectory : procedure
             procedure that asks the user for a folders path until the given path is correct
-    
+
         local :
             exit : boolean : condition of the while loop
             directory : string : path of the directory entered by the user
+
         return :
             directory : string : path of the directory entered by the user
         */
@@ -56,20 +57,47 @@ namespace Sudoku_solver_API
             //Returning the directory
             return directory;
         }
+        
+        //---------------------------------------------------------------------------------------
+
+        /*
+        RetrieveGrid : procedure
+            procedure that retrieves a sudoku grid from a txt file
+
+        parameters :
+            Xpath : string : path of the txt file
+        */
         public static int[,] RetrieveGrid(string Xpath)
         {
             
         }
 
-        public static int[,] ShowGrid(int[,] tab)
+        //---------------------------------------------------------------------------------------
+
+        /*
+        ShowGrid : procedure
+            procedure that displays in the Console the sudoku grid
+
+        parameters :
+            Xtab : int[,] : sudoku grid
+    
+        local :
+            i : int : iterator of a for loop
+            j : int : iterator of a for loop
+        */
+        public static int[,] ShowGrid(int[,] Xtab)
         {
-            for(int i=0; i<tab.GetLength(0); i++)
+            //For each line
+            for(int i=0; i<Xtab.GetLength(0); i++)
             {
-                for(int j=0; j<tab.GetLength(1); j++)
+                //For each column
+                for(int j=0; j<Xtab.GetLength(1); j++)
                 {
-                    Console.Write("[" + tab[i,j] + "]\t");
+                    //Write the value at line,column
+                    Console.Write("[" + Xtab[i,j] + "]\t");
                 }
 
+                //Line break
                 Console.WriteLine();
             }
         }
