@@ -11,6 +11,8 @@ class Main_program
 {
     static void Main()
     {
+        Console.Title = "sudoku_solver";
+        
         char[,] list;
 
         string path = SudokuAPI.AskFilePath();
