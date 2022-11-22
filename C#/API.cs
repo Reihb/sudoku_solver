@@ -82,6 +82,7 @@ namespace Sudoku_solver_API
                 {
                     res[l,c] = val[c];
                 }
+                
                 l++;
             }
 
