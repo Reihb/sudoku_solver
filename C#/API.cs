@@ -104,6 +104,9 @@ namespace Sudoku_solver_API
         */
         public static void ShowGrid(char[,] Xtab)
         {
+            Console.WriteLine("\nSudoku grid :");
+            Console.WriteLine();
+            
             //For each line
             for(int i=0; i<Xtab.GetLength(0); i++)
             {
