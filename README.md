@@ -1,4 +1,4 @@
-# sudoku_solver
+# !(./logo.png) sudoku_solver
 
 **sudoku_solver** is a HTML/C# project that aims at creating a website and a sudoku solver program written in C#
 
