@@ -21,6 +21,8 @@ class Main_program
 
         SudokuAPI.ShowGrid(list);
 
+        Console.WriteLine("GetCrossNumber [0,0]");
+
         Debug.ShowListChar(Sudoku.GetCrossNumbers(list, 0, 0));
 
         Console.ReadLine();
