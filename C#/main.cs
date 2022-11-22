@@ -13,7 +13,9 @@ class Main_program
     {
         int[,] list;
 
-        list = SudokuAPI.RetrieveGrid("grid.txt");
+        string path = SudokuAPI.AskDirectory();
+
+        list = SudokuAPI.RetrieveGrid(path);
 
         SudokuAPI.ShowGrid(list);
     }
