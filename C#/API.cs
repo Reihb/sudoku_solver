@@ -80,9 +80,9 @@ namespace Sudoku_solver_API
             {
                 for(int c=0; c<val.Length; c++)
                 {
-                    res[l,c] = val[c];
+                    res[l,c] = int.Parse(val[c].ToString());
                 }
-                
+
                 l++;
             }
 
