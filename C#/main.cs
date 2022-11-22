@@ -30,7 +30,7 @@ class Main_program
     {
         Console.WriteLine();
 
-        foreach(int val in Xlist)
+        foreach(char val in Xlist)
         {
             Console.Write("[" + val + "]\t");
         }
