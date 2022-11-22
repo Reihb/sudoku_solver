@@ -6,29 +6,59 @@ namespace Sudoku_solver_API
 {
     class SudokuAPI
     {
-        public static int[,] RetrieveGrid(string Xpath)
+
+        /*
+        AskDirectory : procedure
+            procedure that asks the user for a folders path until the given path is correct
+    
+        local :
+            exit : boolean : condition of the while loop
+            directory : string : path of the directory entered by the user
+        return :
+            directory : string : path of the directory entered by the user
+        */
+        public static string AskDirectory()
         {
-            int lin,col;
-            string[] txt;
-            int[,] res = new int[10,10];
 
-            txt = File.ReadAllLines(Xpath);
+            //Declaration of the local variables
+            bool exit;
+            string directory;
 
-            lin = 0;
-            col = 0;
-
-            foreach(string val in txt)
+            //Initialization of the local variables
+            exit = false;
+            directory = "";
+        
+            //While exit is false
+            while (!exit)
             {
-                for(int i=0; i<val.Length; i++)
-                {
-                    res[lin,col] = val[i];
-                    col ++;
-                }
+                //Prompting the user to enter a folder's path
+                Console.WriteLine("Enter a folder's path : ");
+                directory = Console.ReadLine();
 
-                lin++;
+                //If the folder exists
+                if (Directory.Exists(directory))
+                {
+                    exit = true;
+                }
+                //If the fodler doesn't exist or the path is incorrect
+                else
+                {
+                    //Writing a warning message before asking again
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Clear();
+                    Console.WriteLine("/!\\ This folder doesn't exist | The path is incorrect /!\\");
+                }
             }
 
-            return res;
+            //Remove the red color of the text
+            Console.ResetColor();
+
+            //Returning the directory
+            return directory;
+        }
+        public static int[,] RetrieveGrid(string Xpath)
+        {
+            
         }
 
         public static int[,] ShowGrid(int[,] tab)
