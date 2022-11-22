@@ -1,10 +1,11 @@
+//Main program of the sudoku_solver project
+
 using System;
 using System.IO;
 using System.Collections.Generic;
+//Using custom libraries
 using Sudoku_solver;
 using Sudoku_solver_API;
-
-//Compilation command : mcs -out:main.exe main.cs API.cs solver.cs
 
 class Main_program
 {

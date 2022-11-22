@@ -41,7 +41,6 @@ namespace Sudoku_solver_API
                 }
 
                 Console.WriteLine();
-                Console.WriteLine();
             }
         }
     }
