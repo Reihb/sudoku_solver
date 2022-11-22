@@ -6,6 +6,6 @@ This is part of our student work at Unistra
 
 ## Credits
 
-* Reihb(https://github.com/Reihb)
+* [Reihb](https://github.com/Reihb)
 
 * Niconinio
