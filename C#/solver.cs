@@ -8,7 +8,7 @@ namespace Sudoku_solver
     {
         public static List<char> GetCrossNumbers(char[,] Xtab, int i, int j)
         {
-            List<int> res = new List<int>();
+            List<char> res = new List<char>();
 
             for(int a=0; a<Xtab.GetLength(0); a++)
             {
