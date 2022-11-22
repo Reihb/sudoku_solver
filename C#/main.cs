@@ -13,7 +13,7 @@ class Main_program
     {
         int[,] list;
 
-        list = SudokuAPI.RetrieveGrid(grid.txt);
+        list = SudokuAPI.RetrieveGrid("grid.txt");
 
         SudokuAPI.ShowGrid(list);
     }

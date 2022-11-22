@@ -78,7 +78,7 @@ namespace Sudoku_solver_API
 
             foreach(string val in temp)
             {
-                for(int c=0; i<val.Length; i++)
+                for(int c=0; c<val.Length; c++)
                 {
                     res[l,c] = val[c];
                 }
@@ -100,7 +100,7 @@ namespace Sudoku_solver_API
             i : int : iterator of a for loop
             j : int : iterator of a for loop
         */
-        public static int[,] ShowGrid(int[,] Xtab)
+        public static void ShowGrid(int[,] Xtab)
         {
             //For each line
             for(int i=0; i<Xtab.GetLength(0); i++)
