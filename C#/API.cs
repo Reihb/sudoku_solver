@@ -55,7 +55,7 @@ namespace Sudoku_solver_API
             Console.ResetColor();
 
             //Returning the directory
-            return file;
+            return path;
         }
         
         //---------------------------------------------------------------------------------------
