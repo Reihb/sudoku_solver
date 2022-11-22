@@ -21,7 +21,7 @@ class Main_program
 
         SudokuAPI.ShowGrid(list);
 
-        ShowListChar(GetCrossNumbers(list, 0, 0));
+        ShowListChar(Sudoku.GetCrossNumbers(list, 0, 0));
 
         Console.ReadLine();
     }
