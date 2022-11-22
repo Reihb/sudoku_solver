@@ -10,7 +10,7 @@ namespace Sudoku_solver_API
         {
             int lin,col;
             string[] txt;
-            int[,] res;
+            int[,] res = new int[10,10];
 
             txt = File.ReadAllLines(Xpath);
 

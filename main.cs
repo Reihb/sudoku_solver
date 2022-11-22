@@ -8,5 +8,9 @@ using Sudoku_solver_API;
 
 class Main_program
 {
-    
+    int[,] list;
+
+    list = RetrieveGrid(grid.txt);
+
+    ShowGrid(list);
 }
