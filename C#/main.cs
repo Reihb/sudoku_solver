@@ -24,8 +24,8 @@ class Main_program
 
         SudokuAPI.ShowGrid(sudoku_tab);
 
-        ShowListChar(tab[0,0]);
-        ShowListChar(tab[0,1]);
+        Debug.ShowListChar(tab[0,0]);
+        Debug.ShowListChar(tab[0,1]);
     }
 }
 
