@@ -26,6 +26,8 @@ class Main_program
 
         Debug.ShowListChar(tab[0,0]);
         Debug.ShowListChar(tab[0,1]);
+
+        Console.ReadLine();
     }
 }
 
