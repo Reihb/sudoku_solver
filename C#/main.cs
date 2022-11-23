@@ -13,19 +13,19 @@ class Main_program
     {
         Console.Title = "sudoku_solver";
         
-        char[,] list;
+        char[,] sudoku_tab;
+        List<int>[,] tab;
 
         string path = SudokuAPI.AskFilePath();
 
-        list = SudokuAPI.RetrieveGrid(path);
+        sudoku_tab = SudokuAPI.RetrieveGrid(path);
 
-        SudokuAPI.ShowGrid(list);
+        Sudoku.UpdateCrossNumbersTab(sudoku_tab, tab);
 
-        Console.WriteLine("GetCrossNumber [0,0]");
+        SudokuAPI.ShowGrid(sudoku_tab);
 
-        Debug.ShowListChar(Sudoku.GetCrossNumbers(list, 0, 0));
-
-        Console.ReadLine();
+        ShowListChar(tab[0,0]);
+        ShowListChar(tab[0,1]);
     }
 }
 

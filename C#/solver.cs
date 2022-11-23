@@ -28,5 +28,16 @@ namespace Sudoku_solver
 
             return res;
         }
+
+        public static void UpdateCrossNumbersTab(char[,] Xsrc, List<int>[,] Xout)
+        {
+            for(int i=0; i<Xsrc.GetLength(0); i++)
+            {
+                for(int j=0; j<Xsrc.GetLength(1); j++)
+                {
+                    Xout[i,j] = GetCrossNumbers(Xsrc, i, j);
+                }
+            }
+        }
     }
 }
