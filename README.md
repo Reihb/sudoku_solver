@@ -8,4 +8,4 @@ This is part of our student work at Unistra
 
 * [Reihb](https://github.com/Reihb)
 
-* Niconinio
+* [Niconinio](https://github.com/Niconinio)
