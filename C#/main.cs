@@ -14,7 +14,7 @@ class Main_program
         Console.Title = "sudoku_solver";
         
         char[,] sudoku_tab;
-        List<int>[,] tab;
+        List<char>[,] tab;
 
         string path = SudokuAPI.AskFilePath();
 

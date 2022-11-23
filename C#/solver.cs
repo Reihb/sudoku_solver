@@ -29,7 +29,7 @@ namespace Sudoku_solver
             return res;
         }
 
-        public static void UpdateCrossNumbersTab(char[,] Xsrc, List<int>[,] Xout)
+        public static void UpdateCrossNumbersTab(char[,] Xsrc, List<char>[,] Xout)
         {
             for(int i=0; i<Xsrc.GetLength(0); i++)
             {
