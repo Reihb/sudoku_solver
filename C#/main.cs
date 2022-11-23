@@ -26,8 +26,6 @@ class Main_program
         Debug.ShowListChar(Sudoku.GetCrossNumbers(list, 0, 0));
 
         Console.ReadLine();
-        //bite
-    }
 }
 
 class Debug
