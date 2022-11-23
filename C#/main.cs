@@ -14,11 +14,12 @@ class Main_program
         Console.Title = "sudoku_solver";
         
         char[,] sudoku_tab;
-        List<char>[,] tab = new List<char>[sudoku_tab.GetLength(0),sudoku_tab.GetLength(1)];
 
         string path = SudokuAPI.AskFilePath();
 
         sudoku_tab = SudokuAPI.RetrieveGrid(path);
+
+        List<char>[,] tab = new List<char>[sudoku_tab.GetLength(0),sudoku_tab.GetLength(1)];
 
         Sudoku.UpdateCrossNumbersTab(sudoku_tab, tab);
 
