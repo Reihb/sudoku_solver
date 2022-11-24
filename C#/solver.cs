@@ -6,6 +6,11 @@ namespace Sudoku_solver
 {
     class Sudoku
     {
+        /*
+            GetCrossNumbers : proc : List<char>
+                Procedure that returns a list of all the used numbers in a line and column (cross)
+            
+        */
         public static List<char> GetCrossNumbers(char[,] Xgrid, int i, int j)
         {
             List<char> res = new List<char>();
@@ -63,6 +68,26 @@ namespace Sudoku_solver
                     {
                         res.Add(Xgrid[i+k, j+l]);
                     }
+                }
+            }
+
+            return res;
+        }
+
+        public static List<char> GetPossibilitiesFromList(char[,] Xgrid, List<char> Xlist1, List<char> Xlist2)
+        {
+            List<char> res = new List<char>();
+
+            for(int i = 0; i<=Xgrid.GetLength(0); i++)
+            {
+                res.Add(char.parse(i.ToString()));
+            }
+
+            for(int j=0; j<Xgrid.GetLength(0); j++)
+            {
+                if(Xlist1.Countains(res[i]) || Xlist2.Countains(res[i]))
+                {
+                    res.RemoveAt(i);
                 }
             }
 

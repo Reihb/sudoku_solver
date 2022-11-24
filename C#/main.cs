@@ -16,20 +16,16 @@ class Main_program
         string path = SudokuAPI.AskFilePath();        
         char[,] grid = SudokuAPI.RetrieveGrid(path);
         List<char> test;
+        List<char> test1;
+        List<char> test2;
 
         Debug.ShowGrid(grid);
 
-        test = Sudoku.GetRegionNumbers(grid, 3);
+        test = Sudoku.GetCrossNumbers(grid, 0, 0);
 
-        Debug.ShowListChar(test);
+        test1 = Sudoku.GetRegionNumbers(grid, 3);
 
-        test = Sudoku.GetRegionNumbers(grid, 0);
-
-        Debug.ShowListChar(test);
-
-        test = Sudoku.GetRegionNumbers(grid, 9);
-
-        Debug.ShowListChar(test);
+        test 2 = Sudoku.GetPossibilitiesFromList(grid, test, test1);
 
         Console.ReadLine();
     }
