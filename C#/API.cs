@@ -7,7 +7,7 @@ namespace Sudoku_solver_API
     class SudokuAPI
     {
         /*
-        AskFilePath : procedure
+        AskFilePath : procedure : string
             procedure that asks the user for a file's path until the given path is correct
 
         local :
@@ -63,7 +63,7 @@ namespace Sudoku_solver_API
         //---------------------------------------------------------------------------------------
 
         /*
-        RetrieveGrid : procedure
+        RetrieveGrid : procedure : char[,]
             procedure that retrieves a sudoku grid from a txt file
 
         parameters :
