@@ -78,16 +78,19 @@ namespace Sudoku_solver
         {
             List<char> res = new List<char>();
 
-            for(int i = 0; i<=Xgrid.GetLength(0); i++)
+            for(int i = 1; i<=Xgrid.GetLength(0); i++)
             {
                 res.Add(char.Parse(i.ToString()));
             }
 
-            for(int j=0; j<Xgrid.GetLength(0); j++)
+            int length = Xgrid.GetLength(0);
+
+            for(int j=0; j<length; j++)
             {
                 if(Xlist1.Contains(res[j]) || Xlist2.Contains(res[j]))
                 {
                     res.RemoveAt(j);
+                    length--;
                     j--;
                 }
             }
