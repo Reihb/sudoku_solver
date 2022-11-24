@@ -56,36 +56,38 @@ namespace Sudoku_solver
             if (i>longueur-1){
                 if(i>longueur-1*2){
                     if(i>longueur-1*3){
-                        possib.Add(3);
-                        possib.Add(5);
-                    }
-                    else{
-                        possib.Add(3);
-                        possib.Add(6);
-                        possib.Add(9);
+                        if(nb==2){
+                            possib.Add(6);
+                            possib.Add(7);
+                        }
+                        else{
+                            possib.Add(7);
+                            possib.Add(8);
+                            possib.Add(9);
+                        }
                     }
                 }
                 else{
                     if(nb==2){
-                        possib.Add(2);
+                        possib.Add(3);
                         possib.Add(4);
                     }
                     else{
-                        possib.Add(2);
+                        possib.Add(4);
                         possib.Add(5);
-                        possib.Add(8);
+                        possib.Add(6);
                     }
                 }
             }
             else{
                 if(nb==2){
                     possib.Add(1);
-                    possib.Add(3);
+                    possib.Add(2);
                 }
                 else{
                     possib.Add(1);
-                    possib.Add(4);
-                    possib.Add(7);
+                    possib.Add(2);
+                    possib.Add(3);
                 }
             }
             if (j>longueur-1){
@@ -131,14 +133,9 @@ namespace Sudoku_solver
                         trouve=true;
                     }
                 }
-                if (trouve==false){
+                if (trouve==true){
                 region=value;
-                break;
                 }
-                else{
-                    trouve=false;
-                }
-
             }
             Console.WriteLine(nb,longueur);
             return region;
