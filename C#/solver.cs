@@ -48,7 +48,7 @@ namespace Sudoku_solver
 
             }
         }
-        */
+        
 
         public static void UpdateCrossNumbersTab(char[,] Xsrc, List<char>[,] Xout)
         {
@@ -60,5 +60,6 @@ namespace Sudoku_solver
                 }
             }
         }
+        */
     }
 }
