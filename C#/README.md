@@ -8,10 +8,22 @@
 
 * char[,] RetrieveGrid(string Xpath)
 
-* void ShowGrid(char[,] Xtab)
-
 ## Sudoku_solver (solver.cs) :
 
 ### Sudoku class :
 
-*  List< char > GetCrossNumbers(char[,] Xtab, int i, int j)
+* List< char > GetCrossNumbers(char[,] Xgrid, int i, int j)
+
+* void SetRegionWH(char[,] Xgrid, out int regionWidth, out int regionHeight)
+
+* List< char > GetRegionNumbers(char[,] Xgrid, int XregionID)
+
+* GetPossibilitiesFromList(char[,] Xgrid, List< char > Xlist1, List< char > Xlist2)s
+
+## Sudoku_solver_debug (debug.cs) :
+
+## Debug class :
+
+* void ShowListChar(List< char > Xlist)
+
+* void ShowGrid(char[,] Xgrid)
