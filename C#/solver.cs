@@ -88,6 +88,7 @@ namespace Sudoku_solver
                 if(Xlist1.Contains(res[j]) || Xlist2.Contains(res[j]))
                 {
                     res.RemoveAt(j);
+                    j--;
                 }
             }
 
