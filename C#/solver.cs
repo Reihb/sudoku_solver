@@ -28,6 +28,8 @@ namespace Sudoku_solver
 
             return res;
         }
+
+        // SI racine pile utiliser la racine sinon diviser par 2 puis par 2
         public static int GetRegionNumbers(char[,] Xtab, int i, int j){
             List<char> resultat = new List<char>();
             List<int> possib= new List<int>();
