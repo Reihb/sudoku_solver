@@ -12,22 +12,13 @@ class Main_program
     static void Main()
     {
         Console.Title = "sudoku_solver";
+
+        string path = SudokuAPI.AskFilePath();        
+        char[,] sudokuGrid = SudokuAPI.RetrieveGrid(path);
+
+        ShowGrid(sudokuGrid);
+
         
-        char[,] list;
-
-        string path = SudokuAPI.AskFilePath();
-
-        list = SudokuAPI.RetrieveGrid(path);
-
-        SudokuAPI.ShowGrid(list);
-
-        Console.WriteLine("GetCrossNumber [0,0]");
-
-        Debug.ShowListChar(Sudoku.GetCrossNumbers(list, 0, 0));
-
-        Console.WriteLine(Sudoku.GetRegionNumbers(list,0,0));
-
-        Console.ReadLine();
     }
 }
 
@@ -43,5 +34,39 @@ class Debug
         }
 
         Console.WriteLine();
+    }
+
+    //---------------------------------------------------------------------------------------
+
+    /*
+    ShowGrid : procedure
+        procedure that displays in the Console the sudoku grid
+
+    parameters :
+        Xtab : int[,] : sudoku grid
+    
+    local :
+        i : int : iterator of a for loop
+        j : int : iterator of a for loop
+    */
+    public static void ShowGrid(char[,] Xtab)
+    {
+        Console.WriteLine("\nSudoku grid :");
+        Console.WriteLine();
+
+        //For each line
+        for(int i=0; i<Xtab.GetLength(0); i++)
+        {
+            //For each column
+            for(int j=0; j<Xtab.GetLength(1); j++)
+            {
+                //Write the value at line,column
+                Console.Write("[" + Xtab[i,j] + "]\t");
+            }
+
+            //Line break
+            Console.WriteLine();
+            Console.WriteLine();
+        }
     }
 }

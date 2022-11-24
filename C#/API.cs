@@ -91,39 +91,5 @@ namespace Sudoku_solver_API
 
             return res;
         }
-
-        //---------------------------------------------------------------------------------------
-
-        /*
-        ShowGrid : procedure
-            procedure that displays in the Console the sudoku grid
-
-        parameters :
-            Xtab : int[,] : sudoku grid
-    
-        local :
-            i : int : iterator of a for loop
-            j : int : iterator of a for loop
-        */
-        public static void ShowGrid(char[,] Xtab)
-        {
-            Console.WriteLine("\nSudoku grid :");
-            Console.WriteLine();
-
-            //For each line
-            for(int i=0; i<Xtab.GetLength(0); i++)
-            {
-                //For each column
-                for(int j=0; j<Xtab.GetLength(1); j++)
-                {
-                    //Write the value at line,column
-                    Console.Write("[" + Xtab[i,j] + "]\t");
-                }
-
-                //Line break
-                Console.WriteLine();
-                Console.WriteLine();
-            }
-        }
     }
 }
