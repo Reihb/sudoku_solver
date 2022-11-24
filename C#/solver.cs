@@ -10,6 +10,17 @@ namespace Sudoku_solver
             GetCrossNumbers : proc : List<char>
                 Procedure that returns a list of all the used numbers in a line and column (cross)
             
+            parameters :
+                Xgrid : char[,] : sudoku grid
+                i : int : line of the current box
+                j : int : column of the current box
+            
+            local :
+                res : List<char> : list of the caracters already used in the cross
+                a : int : iterator of the for 
+
+            return :
+                res : List<char> : list of the caracters already used in the cross            
         */
         public static List<char> GetCrossNumbers(char[,] Xgrid, int i, int j)
         {
@@ -34,6 +45,19 @@ namespace Sudoku_solver
             return res;
         }
 
+        //---------------------------------------------------------------------------------------
+
+        /*
+            SetRegionWH : procedure
+                Procedure that initialize the regionWidth and regionHeight varaibles, wich are the width and the height
+                of the sudoku's regions
+            
+            parameters :
+                Xgrid : char[,] : sudoku grid
+                regionWidth : int : width of the sudoku's regions
+                regionHeight : int : height of the sudoku's regions
+        */
+
         public static void SetRegionWH(char[,] Xgrid, out int regionWidth, out int regionHeight)
         {
             if(Math.Sqrt(Xgrid.GetLength(0))%1 == 0)
@@ -47,6 +71,8 @@ namespace Sudoku_solver
                 regionHeight = 2;
             }
         }
+
+        //---------------------------------------------------------------------------------------
 
         public static List<char> GetRegionNumbers(char[,] Xgrid, int XregionID)
         {
@@ -73,6 +99,8 @@ namespace Sudoku_solver
 
             return res;
         }
+
+        //---------------------------------------------------------------------------------------
 
         public static List<char> GetPossibilitiesFromList(char[,] Xgrid, List<char> Xlist1, List<char> Xlist2)
         {

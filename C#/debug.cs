@@ -6,6 +6,16 @@ namespace Sudoku_solver_Debug
 {
     class Debug
     {
+        /*
+            ShowListChar : procedure
+                Procedure that display a list of char in the Console
+            
+            parameters :
+                Xlist : List<char> : list of char to display
+
+            local :
+                val : char : value of the current char in the list
+        */
         public static void ShowListChar(List<char> Xlist)
         {
             Console.WriteLine();
