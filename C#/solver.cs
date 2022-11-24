@@ -29,6 +29,27 @@ namespace Sudoku_solver
             return res;
         }
 
+        /*
+
+        Work in progress !!!!
+
+        public static List<char> GetPossibilities(List<int> Xlist, char[,] Xtab)
+        {
+            List<char> values = new List<char>();
+            List<char> res = new List<char>();
+
+            for(int i=1; i=< Xtab.GetLength(0); i++)
+            {
+                numbers.Add(char.Parse(i.ToString()));
+            }
+
+            foreach(char val in Xlist)
+            {
+
+            }
+        }
+        */
+
         public static void UpdateCrossNumbersTab(char[,] Xsrc, List<char>[,] Xout)
         {
             for(int i=0; i<Xsrc.GetLength(0); i++)
