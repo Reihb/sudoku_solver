@@ -6,7 +6,6 @@ namespace Sudoku_solver_API
 {
     class SudokuAPI
     {
-
         /*
         AskFilePath : procedure
             procedure that asks the user for a file's path until the given path is correct
