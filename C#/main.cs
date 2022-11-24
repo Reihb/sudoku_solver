@@ -25,7 +25,7 @@ class Main_program
 
         test1 = Sudoku.GetRegionNumbers(grid, 3);
 
-        test 2 = Sudoku.GetPossibilitiesFromList(grid, test, test1);
+        test2 = Sudoku.GetPossibilitiesFromList(grid, test, test1);
 
         Console.ReadLine();
     }
