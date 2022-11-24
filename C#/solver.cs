@@ -30,8 +30,8 @@ namespace Sudoku_solver
         }
         public static int GetRegionNumbers(char[,] Xtab, int i, int j){
             List<char> resultat = new List<char>();
-            List<char> possib= new List<char>();
-            List<char> possibi= new List<char>();
+            List<int> possib= new List<int>();
+            List<int> possibi= new List<int>();
             int longueur;
             int nb;
             bool trouve=false;
