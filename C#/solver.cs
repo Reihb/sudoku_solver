@@ -73,9 +73,9 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
-        public static Dictionnary<string,int> CreateRegionDictionnary(char[,] Xgrid)
+        public static Dictionary<string,int> CreateRegionDictionary(char[,] Xgrid)
         {
-            Dictionnary<string,int> res = new Dictionnary<string,int>();
+            Dictionary<string,int> res = new Dictionary<string,int>();
 
             int regionWidth, regionHeight, regionID;
 
@@ -104,11 +104,11 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
-        public static int GetRegionID(Dictionnary<string,int> XregionDictionnary, int i, int j)
+        public static int GetRegionID(Dictionary<string,int> XregionDictionary, int i, int j)
         {
             int res;
 
-            res = XregionDictionnary[(i.ToString() + j.ToString())];
+            res = XregionDictionary[(i.ToString() + j.ToString())];
 
             return res;
         }
