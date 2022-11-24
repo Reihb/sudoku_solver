@@ -6,31 +6,37 @@ namespace Sudoku_solver
 {
     class Sudoku
     {
-        public static List<char> GetCrossNumbers(char[,] Xtab, int i, int j)
+        public static List<char> GetCrossNumbers(char[,] Xgrid, int i, int j)
         {
             List<char> res = new List<char>();
 
-            for(int a=0; a<Xtab.GetLength(0); a++)
+            for(int a=0; a<Xgrid.GetLength(0); a++)
             {
-                if((Xtab[i,a] != '0') && (!res.Contains(Xtab[i,a])))
+                if((Xgrid[i,a] != '0') && (!res.Contains(Xgrid[i,a])))
                 {
-                    res.Add(Xtab[i,a]);
+                    res.Add(Xgrid[i,a]);
                 }
             }
 
-            for(int a=0; a<Xtab.GetLength(1); a++)
+            for(int a=0; a<Xgrid.GetLength(1); a++)
             {
-                if((Xtab[a,j] != '0') && (!res.Contains(Xtab[a,j])))
+                if((Xgrid[a,j] != '0') && (!res.Contains(Xgrid[a,j])))
                 {
-                    res.Add(Xtab[a,j]);
+                    res.Add(Xgrid[a,j]);
                 }
             }
 
             return res;
         }
 
+        SetRegionWH(char[,] Xgrid, out int width, out int height)
+        {
+            
+        }
+
         // SI racine pile utiliser la racine sinon diviser par 2 puis par 2
-        public static int GetRegionNumbers(char[,] Xtab, int i, int j){
+        /*
+        public static int GetRegionNumbers(char[,] Xgrid, int i, int j){
             List<char> resultat = new List<char>();
             List<int> possib= new List<int>();
             List<int> possibi= new List<int>();
@@ -38,14 +44,14 @@ namespace Sudoku_solver
             int nb;
             bool trouve=false;
             int region=0;
-            if (Xtab.GetLength(0)>9){
+            if (Xgrid.GetLength(0)>9){
                 nb=3;
             }
             else{
                 nb=2;
             }
-            if (Xtab.GetLength(0)%2==0){
-                if (Xtab.GetLength(0)<16){
+            if (Xgrid.GetLength(0)%2==0){
+                if (Xgrid.GetLength(0)<16){
                     longueur=2;
                 }
                 else{
@@ -141,6 +147,6 @@ namespace Sudoku_solver
             }
             Console.WriteLine(nb,longueur);
             return region;
-        }
+        }*/
     }
 }

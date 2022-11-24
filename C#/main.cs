@@ -14,11 +14,9 @@ class Main_program
         Console.Title = "sudoku_solver";
 
         string path = SudokuAPI.AskFilePath();        
-        char[,] sudokuGrid = SudokuAPI.RetrieveGrid(path);
+        char[,] grid = SudokuAPI.RetrieveGrid(path);
 
-        ShowGrid(sudokuGrid);
-
-        
+        ShowGrid(grid);
     }
 }
 
@@ -43,25 +41,25 @@ class Debug
         procedure that displays in the Console the sudoku grid
 
     parameters :
-        Xtab : int[,] : sudoku grid
+        Xgrid : int[,] : sudoku grid
     
     local :
         i : int : iterator of a for loop
         j : int : iterator of a for loop
     */
-    public static void ShowGrid(char[,] Xtab)
+    public static void ShowGrid(char[,] Xgrid)
     {
         Console.WriteLine("\nSudoku grid :");
         Console.WriteLine();
 
         //For each line
-        for(int i=0; i<Xtab.GetLength(0); i++)
+        for(int i=0; i<Xgrid.GetLength(0); i++)
         {
             //For each column
-            for(int j=0; j<Xtab.GetLength(1); j++)
+            for(int j=0; j<Xgrid.GetLength(1); j++)
             {
                 //Write the value at line,column
-                Console.Write("[" + Xtab[i,j] + "]\t");
+                Console.Write("[" + Xgrid[i,j] + "]\t");
             }
 
             //Line break
