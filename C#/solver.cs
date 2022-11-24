@@ -91,13 +91,15 @@ namespace Sudoku_solver
             if (j>longueur-1){
                 if(j>longueur-1*2){
                     if(j>longueur-1*3){
+                        if (nb==2){
                         possibi.Add(3);
                         possibi.Add(5);
-                    }
-                    else{
-                        possibi.Add(3);
-                        possibi.Add(6);
-                        possibi.Add(9);
+                        }
+                        else{
+                            possibi.Add(3);
+                            possibi.Add(6);
+                            possibi.Add(9);
+                        }
                     }
                 }
                 else{
@@ -138,6 +140,7 @@ namespace Sudoku_solver
                 }
 
             }
+            Console.WriteLine(nb,longueur);
             return region;
         }
     }
