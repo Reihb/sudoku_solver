@@ -7,8 +7,8 @@ namespace Sudoku_solver
     class Sudoku
     {
         /*
-            GetCrossNumbers : procedure : List<char>
-                Procedure that returns a list of all the used numbers in a line and column (cross)
+            GetCrossNumbers : function : List<char>
+                Function that returns a list of all the used numbers in a line and column (cross)
             
             parameters :
                 Xgrid : char[,] : sudoku grid
@@ -57,7 +57,6 @@ namespace Sudoku_solver
                 regionWidth : int : width of the sudoku's regions
                 regionHeight : int : height of the sudoku's regions
         */
-
         public static void SetRegionWH(char[,] Xgrid, out int regionWidth, out int regionHeight)
         {
             if(Math.Sqrt(Xgrid.GetLength(0))%1 == 0)
@@ -75,8 +74,8 @@ namespace Sudoku_solver
         //---------------------------------------------------------------------------------------
 
         /*
-            GetRegionNumbers : procedure : List<char>
-                Procedure that returns a list of all the used numbers in region (by it's ID)
+            GetRegionNumbers : function : List<char>
+                Function that returns a list of all the used numbers in a region (by it's ID)
 
             parameters :
                 Xgrid : char[,] : sudoku grid
@@ -94,7 +93,6 @@ namespace Sudoku_solver
             return :
                 res : List<char> : list of all the caracters used in the region
         */
-
         public static List<char> GetRegionNumbers(char[,] Xgrid, int XregionID)
         {
             List<char> res = new List<char>();
@@ -123,7 +121,25 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
-        public static List<char> GetPossibilitiesFromList(char[,] Xgrid, List<char> Xlist1, List<char> Xlist2)
+        /*
+            GetPossibilitiesUnion : function : List<char>
+                Function that return a list of caracters off all the possibilities avalaibable given the
+                list of used numbers in the cross and the region
+            
+            parameters :
+                Xgrid : char[,] : sudoku's grid
+                Xlist1 : List<char> : list of caracters used in the cross
+                Xlist2 : List<char> : list of caracters used in the region
+            
+            local :
+                res : List<char> : list numbers from 1 to sudoku's length
+                i : int : iterator of the for loop
+                length : int : length of the sudoku
+
+            return : 
+                res : List<char> : list of possibilities
+        */
+        public static List<char> GetPossibilitiesUnion(char[,] Xgrid, List<char> Xlist1, List<char> Xlist2)
         {
             List<char> res = new List<char>();
 
@@ -134,20 +150,20 @@ namespace Sudoku_solver
 
             int length = Xgrid.GetLength(0);
 
-            for(int j=0; j<length; j++)
+            for(int i=0; i<length; i++)
             {
-                if(Xlist1.Contains(res[j]) || Xlist2.Contains(res[j]))
+                if(Xlist1.Contains(res[i]) || Xlist2.Contains(res[i]))
                 {
-                    res.RemoveAt(j);
+                    res.RemoveAt(i);
                     length--;
-                    j--;
+                    i--;
                 }
             }
 
             return res;
         }
 
-        // SI racine pile utiliser la racine sinon diviser par 2 puis par 2
+        // /!\ OLD CODE /!\
         /*
         public static int GetRegionNumbers(char[,] Xgrid, int i, int j){
             List<char> resultat = new List<char>();
