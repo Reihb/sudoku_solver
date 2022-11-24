@@ -56,53 +56,71 @@ namespace Sudoku_solver
             if (i>longueur-1){
                 if(i>longueur-1*2){
                     if(i>longueur-1*3){
-                        possib.Add(3,5);
+                        possib.Add(3);
+                        possib.Add(5);
                     }
                     else{
-                        possib.Add(3,6,9);
+                        possib.Add(3);
+                        possib.Add(6);
+                        possib.Add(9);
                     }
                 }
                 else{
                     if(nb==2){
-                        possib.Add(2,4);
+                        possib.Add(2);
+                        possib.Add(4);
                     }
                     else{
-                        possib.Add(2,5,8);
+                        possib.Add(2);
+                        possib.Add(5);
+                        possib.Add(8);
                     }
                 }
             }
             else{
                 if(nb==2){
-                    possib.Add(1,3);
+                    possib.Add(1);
+                    possib.Add(3);
                 }
                 else{
-                    possib.Add(1,4,7);
+                    possib.Add(1);
+                    possib.Add(4);
+                    possib.Add(7);
                 }
             }
             if (j>longueur-1){
                 if(j>longueur-1*2){
                     if(j>longueur-1*3){
-                        possib.Add(3,5);
+                        possibi.Add(3);
+                        possibi.Add(5);
                     }
                     else{
-                        possib.Add(3,6,9);
+                        possibi.Add(3);
+                        possibi.Add(6);
+                        possibi.Add(9);
                     }
                 }
                 else{
                     if(nb==2){
-                        possib.Add(2,4);
+                        possibi.Add(2);
+                        possibi.Add(4);
                     }
                     else{
-                        possib.Add(2,5,8);
+                        possibi.Add(2);
+                        possibi.Add(5);
+                        possibi.Add(8);
                     }
                 }
             }
             else{
                 if(nb==2){
-                    possib.Add(1,3);
+                    possibi.Add(1);
+                    possibi.Add(3);
                 }
                 else{
-                    possib.Add(1,4,7);
+                    possibi.Add(1);
+                    possibi.Add(4);
+                    possibi.Add(7);
                 }
             }
             foreach(int value in possib){
