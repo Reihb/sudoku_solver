@@ -23,9 +23,11 @@ class Main_program
 
         test = Sudoku.GetCrossNumbers(grid, 0, 0);
 
-        test1 = Sudoku.GetRegionNumbers(grid, 3);
+        test1 = Sudoku.GetRegionNumbers(grid, 0);
 
         test2 = Sudoku.GetPossibilitiesFromList(grid, test, test1);
+
+        ShowListChar(test2);
 
         Console.ReadLine();
     }

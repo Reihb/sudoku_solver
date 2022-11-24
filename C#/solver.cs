@@ -85,7 +85,7 @@ namespace Sudoku_solver
 
             for(int j=0; j<Xgrid.GetLength(0); j++)
             {
-                if(Xlist1.Countains(res[i]) || Xlist2.Countains(res[i]))
+                if(Xlist1.Contains(res[j]) || Xlist2.Contains(res[j]))
                 {
                     res.RemoveAt(j);
                 }
