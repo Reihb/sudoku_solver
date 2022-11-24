@@ -19,7 +19,7 @@ class Main_program
         int regionWidth;
         int regionHeight;
 
-        SetRegionWH(grid, out int regionWidth, out int regionHeight);
+        SetRegionWH(grid, out regionWidth, out regionHeight);
 
         ShowGrid(grid);
 

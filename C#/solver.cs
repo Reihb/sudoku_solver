@@ -52,12 +52,12 @@ namespace Sudoku_solver
 
             for(int k=0; k<XregionHeight; k++)
             {
-                for(int l=0; l<XregionWidth: l++)
+                for(int l=0; l<XregionWidth; l++)
                 {
 
-                    if((Xgrid[i+k; j+l] != '0') && (!res.Contains(Xgrid[i+k; j+l])))
+                    if((Xgrid[i+k, j+l] != '0') && (!res.Contains(Xgrid[i+k, j+l])))
                     {
-                        res.Add(Xgrid[i+k; j+l]);
+                        res.Add(Xgrid[i+k, j+l]);
                     }
                 }
             }
