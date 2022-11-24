@@ -73,6 +73,48 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
+        public static Dictionnary<string,int> CreateRegionDictionnary(char[,] Xgrid)
+        {
+            Dictionnary<string,int> res = new Dictionnary<string,int>();
+
+            int regionWidth, regionHeight, regionID;
+
+            regionID = 0;
+
+            SetRegionWH(Xgrid, out regionWidth, out regionHeight);
+
+            for(int i=0; i<(Xgrid.GetLength(0) / regionHeight); i++)
+            {
+                for(int j=0; j<(Xgrid.GetLength(1) / regionWidth); j++)
+                {
+                    for(int k=0; k<regionHeight; k++)
+                    {
+                        for(int l=0; l<regionWidth; l++)
+                        {
+                            res.Add((k.ToString() + l.ToString()), regionID);
+                        }
+                    }
+                    regionID++;
+                }
+                regionID++;
+            }
+
+            return res;
+        }
+
+        //---------------------------------------------------------------------------------------
+
+        public static int GetRegionID(Dictionnary<string,int> XregionDictionnary, int i, int j)
+        {
+            int res;
+
+            res = XregionDictionnary[(i.ToString() + j.ToString())];
+
+            return res;
+        }
+
+        //---------------------------------------------------------------------------------------
+
         /*
             GetRegionNumbers : function : List<char>
                 Function that returns a list of all the used numbers in a region (by it's ID)
