@@ -18,7 +18,7 @@
 
 * List< char > GetRegionNumbers(char[,] Xgrid, int XregionID)
 
-* GetPossibilitiesFromList(char[,] Xgrid, List< char > Xlist1, List< char > Xlist2)s
+* GetPossibilitiesFromList(char[,] Xgrid, List< char > Xlist1, List< char > Xlist2)
 
 ## Sudoku_solver_debug (debug.cs) :
 
