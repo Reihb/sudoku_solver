@@ -40,7 +40,7 @@ namespace Sudoku_solver
                 nb=3;
             }
             else{
-                nb=2
+                nb=2;
             }
             if (Xtab.GetLength(0)%2==0){
                 if (Xtab.GetLength(0)<16){
