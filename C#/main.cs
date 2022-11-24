@@ -16,14 +16,18 @@ class Main_program
         string path = SudokuAPI.AskFilePath();        
         char[,] grid = SudokuAPI.RetrieveGrid(path);
         List<char> test;
-        int regionWidth;
-        int regionHeight;
-
-        Sudoku.SetRegionWH(grid, out regionWidth, out regionHeight);
 
         Debug.ShowGrid(grid);
 
-        test = Sudoku.GetRegionNumbers(grid, regionWidth, regionHeight, 3);
+        test = Sudoku.GetRegionNumbers(grid, 3);
+
+        Debug.ShowListChar(test);
+
+        test = Sudoku.GetRegionNumbers(grid, 0);
+
+        Debug.ShowListChar(test);
+
+        test = Sudoku.GetRegionNumbers(grid, 9);
 
         Debug.ShowListChar(test);
 

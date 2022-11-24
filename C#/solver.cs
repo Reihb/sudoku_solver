@@ -43,16 +43,20 @@ namespace Sudoku_solver
             }
         }
 
-        public static List<char> GetRegionNumbers(char[,] Xgrid, int XregionWidth,int XregionHeight, int XregionID)
+        public static List<char> GetRegionNumbers(char[,] Xgrid, int XregionID)
         {
             List<char> res = new List<char>();
 
-            int i = (XregionHeight * XregionID) % (XregionHeight * XregionWidth);
-            int j = (XregionWidth * XregionID) % (XregionHeight * XregionWidth);
+            int regionWidth, regionWidth;
 
-            for(int k=0; k<XregionHeight; k++)
+            SetRegionWH(out regionWidth, out regionWidth);
+
+            int i = (XregionID/regionHeight) * (regionHeight);
+            int j = (regionHeight * XregionID) % (regionHeight * regionWidth);
+
+            for(int k=0; k<regionHeight; k++)
             {
-                for(int l=0; l<XregionWidth; l++)
+                for(int l=0; l<regionWidth; l++)
                 {
 
                     if((Xgrid[i+k, j+l] != '0') && (!res.Contains(Xgrid[i+k, j+l])))
