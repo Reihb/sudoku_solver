@@ -7,7 +7,7 @@ namespace Sudoku_solver
     class Sudoku
     {
         /*
-            GetCrossNumbers : proc : List<char>
+            GetCrossNumbers : procedure : List<char>
                 Procedure that returns a list of all the used numbers in a line and column (cross)
             
             parameters :
@@ -73,6 +73,27 @@ namespace Sudoku_solver
         }
 
         //---------------------------------------------------------------------------------------
+
+        /*
+            GetRegionNumbers : procedure : List<char>
+                Procedure that returns a list of all the used numbers in region (by it's ID)
+
+            parameters :
+                Xgrid : char[,] : sudoku grid
+                XregionID : int : region's ID [FROM 0 TO SUDOKU LENGTH]
+
+            local :
+                res : List<char> : list of all the caracters used in the region
+                regionWidth : int : width of the sudoku's regions
+                regionHeight : int : height of the sudoku's regions
+                i : int : line of the top left box of the region based on it's ID
+                j : int : column of the top left box of the region based on it's ID
+                k : int : iterator of the "line" loop
+                k : int : iterator of the "column" loop
+            
+            return :
+                res : List<char> : list of all the caracters used in the region
+        */
 
         public static List<char> GetRegionNumbers(char[,] Xgrid, int XregionID)
         {
