@@ -32,7 +32,7 @@ namespace Sudoku_solver
             List<char> resultat = new List<char>();
             List<char> possib= new List<char>();
             List<char> possibi= new List<char>();
-            int long;
+            int longueur;
             int nb;
             bool trouve=false;
             int region=0;
@@ -44,18 +44,18 @@ namespace Sudoku_solver
             }
             if (Xtab.GetLength(0)%2==0){
                 if (Xtab.GetLength(0)<16){
-                    long=2;
+                    longueur=2;
                 }
                 else{
-                    long=4;
+                    longueur=4;
                 }
             }
             else{
-                long=3;
+                longueur=3;
             }
-            if (i>long-1){
-                if(i>long-1*2){
-                    if(i>long-1*3){
+            if (i>longueur-1){
+                if(i>longueur-1*2){
+                    if(i>longueur-1*3){
                         possib.Add(3,5);
                     }
                     else{
@@ -79,9 +79,9 @@ namespace Sudoku_solver
                     possib.Add(1,4,7);
                 }
             }
-            if (j>long-1){
-                if(j>long-1*2){
-                    if(j>long-1*3){
+            if (j>longueur-1){
+                if(j>longueur-1*2){
+                    if(j>longueur-1*3){
                         possib.Add(3,5);
                     }
                     else{
