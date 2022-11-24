@@ -33,8 +33,8 @@ namespace Sudoku_solver
         {
             if(Math.Sqrt(Xgrid.GetLength(0))%1 == 0)
             {
-                regionWidth = Math.Sqrt(Xgrid.GetLength(0));
-                regionHeight = Math.Sqrt(Xgrid.GetLength(0));
+                regionWidth = (int)Math.Sqrt(Xgrid.GetLength(0));
+                regionHeight = (int)Math.Sqrt(Xgrid.GetLength(0));
             }
             else
             {
