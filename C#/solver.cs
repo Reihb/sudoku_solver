@@ -29,9 +29,40 @@ namespace Sudoku_solver
             return res;
         }
 
-        SetRegionWH(char[,] Xgrid, out int width, out int height)
+        public static void SetRegionWH(char[,] Xgrid, out int regionWidth, out int regionHeight)
         {
-            
+            if(Math.Sqrt(Xgrid.GetLength(0))%1 == 0)
+            {
+                width = Math.Sqrt(Xgrid.GetLength(0));
+                height = Math.Sqrt(Xgrid.GetLength(0));
+            }
+            else
+            {
+                width = Xgrid.GetLength(0) / 2;
+                height = 2;
+            }
+        }
+
+        public static List<char> GetRegionNumbers(char[,] Xgrid, int XregionWidth,int XregionHeight, int XregionID)
+        {
+            List<char> res = new List<char>();
+
+            int i = (XregionHeight * regionID) % (XregionHeight * XregionWidth);
+            int j = (XregionWidth * XregionID) % (XregionHeight * XregionWidth);
+
+            for(int k=0; k<XregionHeight; k++)
+            {
+                for(int l=0; l<XregionWidth: l++)
+                {
+
+                    if((Xgrid[i+k; j+l] != '0') && (!res.Contains(Xgrid[i+k; j+l])))
+                    {
+                        res.Add(Xgrid[i+k; j+l]);
+                    }
+                }
+            }
+
+            return res;
         }
 
         // SI racine pile utiliser la racine sinon diviser par 2 puis par 2
@@ -70,7 +101,22 @@ namespace Sudoku_solver
                         }
                         else{
                             possib.Add(7);
-                            possib.Add(8);
+               
+                if(j>longueur-1*2){
+                    if(j>longueur-1*3){
+                        if (nb==2){
+                        possibi.Add(3);
+                        possibi.Add(5);
+                        }
+                        else{
+                            possibi.Add(3);
+                            possibi.Add(6);
+                            possibi.Add(9);
+                        }
+                    }
+                }
+                else{
+                    if(nb=             possib.Add(8);
                             possib.Add(9);
                         }
                     }
@@ -98,22 +144,7 @@ namespace Sudoku_solver
                     possib.Add(3);
                 }
             }
-            if (j>longueur-1){
-                if(j>longueur-1*2){
-                    if(j>longueur-1*3){
-                        if (nb==2){
-                        possibi.Add(3);
-                        possibi.Add(5);
-                        }
-                        else{
-                            possibi.Add(3);
-                            possibi.Add(6);
-                            possibi.Add(9);
-                        }
-                    }
-                }
-                else{
-                    if(nb==2){
+            if (j>longueur-1){=2){
                         possibi.Add(2);
                         possibi.Add(4);
                     }
