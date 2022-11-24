@@ -28,38 +28,99 @@ namespace Sudoku_solver
 
             return res;
         }
-
-        /*
-
-        Work in progress !!!!
-
-        public static List<char> GetPossibilities(List<int> Xlist, char[,] Xtab)
-        {
-            List<char> values = new List<char>();
-            List<char> res = new List<char>();
-
-            for(int i=1; i=< Xtab.GetLength(0); i++)
-            {
-                numbers.Add(char.Parse(i.ToString()));
+        public static int GetRegionNumbers(char[,] Xtab, int i, int j){
+            List<char> resultat = new List<char>();
+            List<char> possib= new List<char>();
+            List<char> possibi= new List<char>();
+            int long;
+            int nb;
+            bool trouve=false;
+            int region=0;
+            if (Xtab.GetLength(0)>9){
+                nb=3;
             }
-
-            foreach(char val in Xlist)
-            {
-
+            else{
+                nb=2
             }
-        }
-        
-
-        public static void UpdateCrossNumbersTab(char[,] Xsrc, List<char>[,] Xout)
-        {
-            for(int i=0; i<Xsrc.GetLength(0); i++)
-            {
-                for(int j=0; j<Xsrc.GetLength(1); j++)
-                {
-                    Xout[i,j] = GetCrossNumbers(Xsrc, i, j);
+            if (Xtab.GetLength(0)%2==0){
+                if (Xtab.GetLength(0)<16){
+                    long=2;
+                }
+                else{
+                    long=4;
                 }
             }
+            else{
+                long=3;
+            }
+            if (i>long-1){
+                if(i>long-1*2){
+                    if(i>long-1*3){
+                        possib.Add(3,5);
+                    }
+                    else{
+                        possib.Add(3,6,9);
+                    }
+                }
+                else{
+                    if(nb==2){
+                        possib.Add(2,4);
+                    }
+                    else{
+                        possib.Add(2,5,8);
+                    }
+                }
+            }
+            else{
+                if(nb==2){
+                    possib.Add(1,3);
+                }
+                else{
+                    possib.Add(1,4,7);
+                }
+            }
+            if (j>long-1){
+                if(j>long-1*2){
+                    if(j>long-1*3){
+                        possib.Add(3,5);
+                    }
+                    else{
+                        possib.Add(3,6,9);
+                    }
+                }
+                else{
+                    if(nb==2){
+                        possib.Add(2,4);
+                    }
+                    else{
+                        possib.Add(2,5,8);
+                    }
+                }
+            }
+            else{
+                if(nb==2){
+                    possib.Add(1,3);
+                }
+                else{
+                    possib.Add(1,4,7);
+                }
+            }
+            foreach(int value in possib){
+                foreach(int nombre in possibi){
+                    if (value==nombre){
+                        trouve=true;
+                    }
+                }
+                if (trouve==false){
+                region=value;
+                break;
+                }
+                else{
+                    trouve=false;
+                }
+
+            }
+            return region;
         }
-        */
     }
 }
