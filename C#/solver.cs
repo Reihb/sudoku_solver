@@ -47,7 +47,9 @@ namespace Sudoku_solver
         {
             List<char> res = new List<char>();
 
-            SetRegionWH(out regionWidth, out regionWidth);
+            int regionWidth, regionHeight;
+
+            SetRegionWH(Xgrid, out regionWidth, out regionHeight);
 
             int i = (XregionID/regionHeight) * (regionHeight);
             int j = (regionHeight * XregionID) % (regionHeight * regionWidth);
