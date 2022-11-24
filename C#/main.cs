@@ -19,13 +19,13 @@ class Main_program
         int regionWidth;
         int regionHeight;
 
-        SetRegionWH(grid, out regionWidth, out regionHeight);
+        Sudoku.SetRegionWH(grid, out regionWidth, out regionHeight);
 
-        ShowGrid(grid);
+        Debug.ShowGrid(grid);
 
         test = Sudoku.GetRegionNumbers(grid, regionWidth, regionHeight, 3);
 
-        ShowListChar(test);
+        Debug.ShowListChar(test);
 
         Console.ReadLine();
     }

@@ -33,13 +33,13 @@ namespace Sudoku_solver
         {
             if(Math.Sqrt(Xgrid.GetLength(0))%1 == 0)
             {
-                width = Math.Sqrt(Xgrid.GetLength(0));
-                height = Math.Sqrt(Xgrid.GetLength(0));
+                regionWidth = Math.Sqrt(Xgrid.GetLength(0));
+                regionHeight = Math.Sqrt(Xgrid.GetLength(0));
             }
             else
             {
-                width = Xgrid.GetLength(0) / 2;
-                height = 2;
+                regionWidth = Xgrid.GetLength(0) / 2;
+                regionHeight = 2;
             }
         }
 
@@ -47,7 +47,7 @@ namespace Sudoku_solver
         {
             List<char> res = new List<char>();
 
-            int i = (XregionHeight * regionID) % (XregionHeight * XregionWidth);
+            int i = (XregionHeight * XregionID) % (XregionHeight * XregionWidth);
             int j = (XregionWidth * XregionID) % (XregionHeight * XregionWidth);
 
             for(int k=0; k<XregionHeight; k++)
