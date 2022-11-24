@@ -27,7 +27,7 @@ class Main_program
 
         test2 = Sudoku.GetPossibilitiesFromList(grid, test, test1);
 
-        ShowListChar(test2);
+        Debug.ShowListChar(test2);
 
         Console.ReadLine();
     }
