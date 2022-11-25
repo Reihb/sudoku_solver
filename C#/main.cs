@@ -26,7 +26,7 @@ class Main_program
             i = int.Parse(Console.ReadLine());
             j = int.Parse(Console.ReadLine());
 
-            Debug.ShowListChar(GetPossibilities(grid, RegionTable, i, j));
+            Debug.ShowListChar(Sudoku.GetPossibilities(grid, RegionTable, i, j));
         }
 
         Console.ReadLine();

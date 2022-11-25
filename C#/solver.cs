@@ -73,7 +73,7 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
-        public static int GetRegionID(char[,] XregionTable, int i, int j)
+        public static int GetRegionID(int[,] XregionTable, int i, int j)
         {
             int res;
 
@@ -207,7 +207,7 @@ namespace Sudoku_solver
             List<char> region;
             List<char> res;
 
-            cross = GetCrossNumbers(Xgrid, i,j)
+            cross = GetCrossNumbers(Xgrid, i,j);
             region = GetRegionNumbers(Xgrid, GetRegionID(XregionTable, i, j));
 
             res = GetPossibilitiesUnion(cross, region);
