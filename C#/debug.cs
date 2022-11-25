@@ -61,5 +61,25 @@ namespace Sudoku_solver_Debug
                 Console.WriteLine();
             }
         }
+        public static void ShowGridInt(int[,] Xgrid)
+        {
+            Console.WriteLine("\nSudoku grid :");
+            Console.WriteLine();
+
+            //For each line
+            for(int i=0; i<Xgrid.GetLength(0); i++)
+            {   
+                //For each column
+                for(int j=0; j<Xgrid.GetLength(1); j++)
+                {
+                    //Write the value at line,column
+                    Console.Write("[" + Xgrid[i,j] + "]\t");
+                }
+
+                //Line break
+                Console.WriteLine();
+                Console.WriteLine();
+            }
+        }
     }
 }
