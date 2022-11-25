@@ -206,8 +206,38 @@ namespace Sudoku_solver
 
             return res;
         }
+        public static int[,] GenerateRegionTable(char[,] Xgrid){
+            int regionWidth;
+            int regionHeight;
+            int[,] RegionTable = new int[Xgrid.GetLength(0),Xgrid.GetLength(1)];
+            SetRegionWH(Xgrid,regionWidth,regionHeight);
+            int RegionID=0;
+            int i=0;
+            int previousi=0;
+            int previousj=0;
+            int j=0;
+            for(int n=0;n<RegionTable.GetLength(0);n++){
+                while(j<regionHeight-1){
+                    for (i; i<regionWidth; i++){
+                        RegionTable[i,j]=RegionID;
+                    }
+                    j++;
+                    i=previousi;
+                }
+                j=previousj;
+                i=i+regionWidth;
+                previousi=i;
+                if(i>=RegionTable.GetLength(0)){
+                    i=0;
+                    j+regionHeight;
+                    previousi=i;
+                    previousj=j;
+                }
+                RegionID++;
+            }
+        }
 
-        // /!\ OLD CODE /!\
+        // /!\ OLD CODE VERY BEAUTIFUL :3 /!\
         /*
         public static int GetRegionNumbers(char[,] Xgrid, int i, int j){
             List<char> resultat = new List<char>();
