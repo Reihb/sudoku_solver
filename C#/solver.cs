@@ -92,6 +92,7 @@ namespace Sudoku_solver
                     {
                         for(int l=j; l< j + regionWidth; l++)
                         {
+                            Console.WriteLine((k.ToString() + l.ToString() + regionID));
                             res.Add(k.ToString() + l.ToString(), regionID);
                         }
                     }
