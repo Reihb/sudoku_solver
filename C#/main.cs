@@ -17,7 +17,7 @@ class Main_program
         string path = SudokuAPI.AskFilePath();        
         char[,] grid = SudokuAPI.RetrieveGrid(path);
         Dictionary<string,int> regionDictionnary = Sudoku.CreateRegionDictionary(grid);
-        Console.WriteLine(Sudoku.GetRegionID(regionDictionnary, 0,0));
+        Console.WriteLine(Sudoku.GetRegionID(regionDictionnary, 0,3));
 
         Debug.ShowGrid(grid);
 
