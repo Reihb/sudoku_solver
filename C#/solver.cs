@@ -88,8 +88,15 @@ namespace Sudoku_solver
             {
                 for(int j=0; j<Xgrid.GetLength(1); j=j+regionWidth)
                 {
-                    regionID++;
+                    for(int k=i; k<regionHeight; k++)
+                    {
+                        for(int l=j; k<regionWidth; l++)
+                        {
+                            res.Add((k.ToString() + j.ToString()), regionID);
+                        }
+                    }
                     Console.WriteLine(regionID);
+                    regionID++;
                 }               
             }
 
