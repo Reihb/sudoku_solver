@@ -210,7 +210,7 @@ namespace Sudoku_solver
             int regionWidth;
             int regionHeight;
             int[,] RegionTable = new int[Xgrid.GetLength(0),Xgrid.GetLength(1)];
-            SetRegionWH(Xgrid,regionWidth,regionHeight);
+            SetRegionWH(Xgrid,out regionWidth,out regionHeight);
             int RegionID=0;
             int i=0;
             int previousi=0;
