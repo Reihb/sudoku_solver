@@ -73,11 +73,11 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
-        public static int GetRegionID(Dictionary<string,int> XregionDictionary, int i, int j)
+        public static int GetRegionID(char[,] XregionTable, int i, int j)
         {
             int res;
 
-            res = XregionDictionary[(i.ToString() + j.ToString())];
+            res = XregionTable[i,j];
 
             return res;
         }
@@ -200,39 +200,5 @@ namespace Sudoku_solver
 
             return res;
         }
-        
-        /*public static int[,] GenerateRegionTable(char[,] Xgrid){
-            int regionWidth;
-            int regionHeight;
-            int[,] RegionTable = new int[Xgrid.GetLength(0),Xgrid.GetLength(1)];
-            SetRegionWH(Xgrid,out regionWidth,out regionHeight);
-            int RegionID=0;
-            int i=0;
-            int previousi=0;
-            int previousj=0;
-            int j=0;
-            for(int n=0;n<RegionTable.GetLength(0);n++){
-                while(i<i+regionHeight-1){
-                    for (int k=j; k<regionWidth; k++){
-                        Console.WriteLine(i+" "+k);
-                        Console.ReadLine();
-                        RegionTable[i,k]=RegionID;
-                    }
-                    i++;
-                    j=previousj;
-                }
-                i=previousi;
-                j=j+regionWidth;
-                previousj=j;
-                RegionID++;
-                if(j>=RegionTable.GetLength(1)){
-                    j=0;
-                    i=i+regionHeight;
-                    previousi=i;
-                    previousj=j;
-                }
-            }
-            return RegionTable;
-        }*/
     }
 }
