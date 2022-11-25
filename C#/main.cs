@@ -22,6 +22,8 @@ class Main_program
 
         i=0;
 
+        Debug.ShowGrid(grid);
+
         while(i != 10)
         {
             Console.WriteLine("Entrez i puis j");
