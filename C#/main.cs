@@ -30,7 +30,9 @@ class Main_program
             i = int.Parse(Console.ReadLine());
             j = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("Liste des possibilités : ");
             Debug.ShowListChar(Sudoku.GetPossibilities(grid, RegionTable, i, j));
+            Console.WriteLine();
         }
 
         Console.ReadLine();
