@@ -174,7 +174,7 @@ namespace Sudoku_solver
             return res;
         }
 
-        public static int[,] GenetateRegionTable(char[,] Xgrid)
+        public static int[,] GenerateRegionTable(char[,] Xgrid)
         {
             int regionWidth, regionHeight, regionID;
             int[,] res = new int[Xgrid.GetLength(0),Xgrid.GetLength(1)];
@@ -199,6 +199,7 @@ namespace Sudoku_solver
                 }
             }
 
+            return res;
         }
         
         /*public static int[,] GenerateRegionTable(char[,] Xgrid){
