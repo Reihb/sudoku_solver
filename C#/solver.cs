@@ -84,6 +84,35 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
+        public static int[,] GenerateRegionTable(char[,] Xgrid)
+        {
+            int regionWidth, regionHeight, regionID;
+            int[,] res = new int[Xgrid.GetLength(0),Xgrid.GetLength(1)];
+
+            SetRegionWH(Xgrid, out regionWidth, out regionHeight);
+
+            regionID = 0;
+
+            for(int i=0; i<=(Xgrid.GetLength(0) - regionHeight); i=i+regionHeight)
+            {
+                for(int j=0; j<=(Xgrid.GetLength(0) - regionWidth); j=j+regionWidth)
+                {
+                    for(int k=i; k<(i+regionHeight); k++)
+                    {
+                        for(int l=j; l<(j+regionHeight); l++)
+                        {
+                            res[k,l] = regionID;
+                        }
+                    }
+                    regionID++;
+                }
+            }
+
+            return res;
+        }
+
+        //---------------------------------------------------------------------------------------
+
         /*
             GetRegionNumbers : function : List<char>
                 Function that returns a list of all the used numbers in a region (by it's ID)
@@ -174,34 +203,9 @@ namespace Sudoku_solver
             return res;
         }
 
-        public static int[,] GenerateRegionTable(char[,] Xgrid)
-        {
-            int regionWidth, regionHeight, regionID;
-            int[,] res = new int[Xgrid.GetLength(0),Xgrid.GetLength(1)];
+        //---------------------------------------------------------------------------------------
 
-            SetRegionWH(Xgrid, out regionWidth, out regionHeight);
-
-            regionID = 0;
-
-            for(int i=0; i<=(Xgrid.GetLength(0) - regionHeight); i=i+regionHeight)
-            {
-                for(int j=0; j<=(Xgrid.GetLength(0) - regionWidth); j=j+regionWidth)
-                {
-                    for(int k=i; k<(i+regionHeight); k++)
-                    {
-                        for(int l=j; l<(j+regionHeight); l++)
-                        {
-                            res[k,l] = regionID;
-                        }
-                    }
-                    regionID++;
-                }
-            }
-
-            return res;
-        }
-
-        public static List<char> GetPossibilities(char[,] Xgrid, int[,] XregionTable, int i, int j)
+        public static List<char> GetPossibilitiesFromPos(char[,] Xgrid, int[,] XregionTable, int i, int j)
         {
             List<char> cross;
             List<char> region;
