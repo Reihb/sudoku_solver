@@ -135,7 +135,7 @@ namespace Sudoku_solver
         */
 
         //On pourrait directement intégrer la table des régions ici 
-        
+
         public static List<char> GetRegionNumbers(char[,] Xgrid, int XregionID)
         {
             List<char> res = new List<char>();
