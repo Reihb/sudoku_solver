@@ -177,7 +177,7 @@ namespace Sudoku_solver
         public static int[,] GenetateRegionTable(char[,] Xgrid)
         {
             int regionWidth, regionHeight, regionID;
-            int[,] res = new int[Xgrid.GetLength(0),Xgrid.GetLength(0];
+            int[,] res = new int[Xgrid.GetLength(0),Xgrid.GetLength(1)];
 
             SetRegionWH(Xgrid, out regionWidth, out regionHeight);
 
