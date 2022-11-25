@@ -18,8 +18,16 @@ class Main_program
         char[,] grid = SudokuAPI.RetrieveGrid(path);
         int[,] RegionTable=Sudoku.GenerateRegionTable(grid);
 
-        Debug.ShowGrid(grid);
-        Debug.ShowGridInt(RegionTable);
+        int i,j;
+
+        while(i != 10)
+        {
+            Console.WriteLine("Entrez i puis j");
+            i = int.Parse(Console.ReadLine());
+            j = int.Parse(Console.ReadLine());
+
+            Debug.ShowListChar(GetPossibilities(grid, RegionTable, i, j));
+        }
 
         Console.ReadLine();
     }

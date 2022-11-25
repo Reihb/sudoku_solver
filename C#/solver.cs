@@ -200,5 +200,19 @@ namespace Sudoku_solver
 
             return res;
         }
+
+        public static List<char> GetPossibilities(char[,] Xgrid, int[,] XregionTable, int i, int j)
+        {
+            List<char> cross;
+            List<char> region;
+            List<char> res;
+
+            cross = GetCrossNumbers(Xgrid, i,j)
+            region = GetRegionNumbers(Xgrid, GetRegionID(XregionTable, i, j));
+
+            res = GetPossibilitiesUnion(cross, region);
+
+            return res;
+        }
     }
 }
