@@ -83,9 +83,9 @@ namespace Sudoku_solver
 
             SetRegionWH(Xgrid, out regionWidth, out regionHeight);
 
-            for(int i=0; i<(Xgrid.GetLength(0) / regionHeight); i++)
+            for(int i=0; i<Xgrid.GetLength(0); i=i+regionHeight)
             {
-                for(int j=0; j<(Xgrid.GetLength(1) / regionWidth); j++)
+                for(int j=0; j<Xgrid.GetLength(1); j=j+regionWidth)
                 {
                     for(int k=0; k<regionHeight; k++)
                     {
