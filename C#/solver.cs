@@ -73,38 +73,6 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
-        /*public static Dictionary<string,int> CreateRegionDictionary(char[,] Xgrid)
-        {
-            Dictionary<string,int> res = new Dictionary<string,int>();
-
-            int regionWidth, regionHeight, regionID;
-
-            regionID = 0;
-
-            SetRegionWH(Xgrid, out regionWidth, out regionHeight);
-
-            //Work in progress
-            for(int i=0; i<Xgrid.GetLength(0); i=i+regionHeight)
-            {
-                for(int j=0; j<Xgrid.GetLength(1); j=j+regionWidth)
-                {
-                    for(int k=i; k< i + regionHeight; k++)
-                    {
-                        for(int l=j; l< j + regionWidth; l++)
-                        {
-                            Console.WriteLine((k.ToString() + l.ToString() + regionID));
-                            res.Add(k.ToString() + l.ToString(), regionID);
-                        }
-                    }
-                    regionID++;
-                }               
-            }
-
-            return res;
-        }
-
-        //---------------------------------------------------------------------------------------
-
         public static int GetRegionID(Dictionary<string,int> XregionDictionary, int i, int j)
         {
             int res;
@@ -113,7 +81,6 @@ namespace Sudoku_solver
 
             return res;
         }
-        */
 
         //---------------------------------------------------------------------------------------
 
@@ -206,7 +173,35 @@ namespace Sudoku_solver
 
             return res;
         }
-        public static int[,] GenerateRegionTable(char[,] Xgrid){
+
+        public static int[,] GenetateRegionTable(char[,] Xgrid)
+        {
+            int regionWidth, regionHeight, regionID;
+            int[,] res = new int[Xgrid.GetLength(0),Xgrid.GetLength(0];
+
+            SetRegionWH(Xgrid, out regionWidth, out regionHeight);
+
+            regionID = 0;
+
+            for(int i=0; i<(Xgrid.GetLength(0) - regionHeight); i=i+regionHeight)
+            {
+                for(int j=0; j<(Xgrid.GetLength(1) - regionWidth); j=j+regionWidth)
+                {
+                    for(k=i; k<(i+regionHeight); k++)
+                    {
+                        for(l=j; l<(j+regionWidth); l++)
+                        {
+                            res[k,j] = regionID;
+                        }
+
+                        regionID++;
+                    }
+                }
+            }
+
+        }
+        
+        /*public static int[,] GenerateRegionTable(char[,] Xgrid){
             int regionWidth;
             int regionHeight;
             int[,] RegionTable = new int[Xgrid.GetLength(0),Xgrid.GetLength(1)];
@@ -238,121 +233,6 @@ namespace Sudoku_solver
                 }
             }
             return RegionTable;
-        }
-
-        // /!\ OLD CODE VERY BEAUTIFUL :3 /!\
-        /*
-        public static int GetRegionNumbers(char[,] Xgrid, int i, int j){
-            List<char> resultat = new List<char>();
-            List<int> possib= new List<int>();
-            List<int> possibi= new List<int>();
-            int longueur;
-            int nb;
-            bool trouve=false;
-            int region=0;
-            if (Xgrid.GetLength(0)>9){
-                nb=3;
-            }
-            else{
-                nb=2;
-            }
-            if (Xgrid.GetLength(0)%2==0){
-                if (Xgrid.GetLength(0)<16){
-                    longueur=2;
-                }
-                else{
-                    longueur=4;
-                }
-            }
-            else{
-                longueur=3;
-            }
-            if (i>longueur-1){
-                if(i>longueur-1*2){
-                    if(i>longueur-1*3){
-                        if(nb==2){
-                            possib.Add(6);
-                            possib.Add(7);
-                        }
-                        else{
-                            possib.Add(7);
-               
-                if(j>longueur-1*2){
-                    if(j>longueur-1*3){
-                        if (nb==2){
-                        possibi.Add(3);
-                        possibi.Add(5);
-                        }
-                        else{
-                            possibi.Add(3);
-                            possibi.Add(6);
-                            possibi.Add(9);
-                        }
-                    }
-                }
-                else{
-                    if(nb=             possib.Add(8);
-                            possib.Add(9);
-                        }
-                    }
-                }
-                else{
-                    if(nb==2){
-                        possib.Add(3);
-                        possib.Add(4);
-                    }
-                    else{
-                        possib.Add(4);
-                        possib.Add(5);
-                        possib.Add(6);
-                    }
-                }
-            }
-            else{
-                if(nb==2){
-                    possib.Add(1);
-                    possib.Add(2);
-                }
-                else{
-                    possib.Add(1);
-                    possib.Add(2);
-                    possib.Add(3);
-                }
-            }
-            if (j>longueur-1){=2){
-                        possibi.Add(2);
-                        possibi.Add(4);
-                    }
-                    else{
-                        possibi.Add(2);
-                        possibi.Add(5);
-                        possibi.Add(8);
-                    }
-                }
-            }
-            else{
-                if(nb==2){
-                    possibi.Add(1);
-                    possibi.Add(3);
-                }
-                else{
-                    possibi.Add(1);
-                    possibi.Add(4);
-                    possibi.Add(7);
-                }
-            }
-            foreach(int value in possib){
-                foreach(int nombre in possibi){
-                    if (value==nombre){
-                        trouve=true;
-                    }
-                }
-                if (trouve==true){
-                region=value;
-                }
-            }
-            Console.WriteLine(nb,longueur);
-            return region;
         }*/
     }
 }
