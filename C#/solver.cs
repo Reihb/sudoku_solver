@@ -90,12 +90,11 @@ namespace Sudoku_solver
                 {
                     for(int k=i; k< i + regionHeight; k++)
                     {
-                        for(int l=j; k< j + regionWidth; l++)
+                        for(int l=j; l< j + regionWidth; l++)
                         {
-                            res.Add(k.ToString() + j.ToString(), regionID);
+                            res.Add(k.ToString() + l.ToString(), regionID);
                         }
                     }
-                    Console.WriteLine(regionID);
                     regionID++;
                 }               
             }
