@@ -73,7 +73,7 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
-        public static Dictionary<string,int> CreateRegionDictionary(char[,] Xgrid)
+        /*public static Dictionary<string,int> CreateRegionDictionary(char[,] Xgrid)
         {
             Dictionary<string,int> res = new Dictionary<string,int>();
 
@@ -113,6 +113,7 @@ namespace Sudoku_solver
 
             return res;
         }
+        */
 
         //---------------------------------------------------------------------------------------
 
