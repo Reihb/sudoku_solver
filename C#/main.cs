@@ -16,10 +16,10 @@ class Main_program
 
         string path = SudokuAPI.AskFilePath();        
         char[,] grid = SudokuAPI.RetrieveGrid(path);
-        Dictionary<string,int> regionDictionnary = Sudoku.CreateRegionDictionary(grid);
-        Console.WriteLine(Sudoku.GetRegionID(regionDictionnary, 0,3));
+        int[,] RegionTable=Sudoku.GenerateRegionTable(grid);
 
         Debug.ShowGrid(grid);
+        Debug.ShowGridInt(RegionTable);
 
         Console.ReadLine();
     }
