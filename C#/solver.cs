@@ -187,9 +187,9 @@ namespace Sudoku_solver
             {
                 for(int j=0; j<(Xgrid.GetLength(1) - regionWidth); j=j+regionWidth)
                 {
-                    for(k=i; k<(i+regionHeight); k++)
+                    for(int k=i; k<(i+regionHeight); k++)
                     {
-                        for(l=j; l<(j+regionWidth); l++)
+                        for(int l=j; l<(j+regionWidth); l++)
                         {
                             res[k,j] = regionID;
                         }
