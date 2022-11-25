@@ -217,24 +217,27 @@ namespace Sudoku_solver
             int previousj=0;
             int j=0;
             for(int n=0;n<RegionTable.GetLength(0);n++){
-                while(j<regionHeight-1){
-                    for (i; i<regionWidth; i++){
-                        RegionTable[i,j]=RegionID;
+                while(i<i+regionHeight-1){
+                    for (int k=j; k<regionWidth; k++){
+                        Console.WriteLine(i+" "+k);
+                        Console.ReadLine();
+                        RegionTable[i,k]=RegionID;
                     }
-                    j++;
-                    i=previousi;
+                    i++;
+                    j=previousj;
                 }
-                j=previousj;
-                i=i+regionWidth;
-                previousi=i;
-                if(i>=RegionTable.GetLength(0)){
-                    i=0;
-                    j+regionHeight;
+                i=previousi;
+                j=j+regionWidth;
+                previousj=j;
+                RegionID++;
+                if(j>=RegionTable.GetLength(1)){
+                    j=0;
+                    i=i+regionHeight;
                     previousi=i;
                     previousj=j;
                 }
-                RegionID++;
             }
+            return RegionTable;
         }
 
         // /!\ OLD CODE VERY BEAUTIFUL :3 /!\
