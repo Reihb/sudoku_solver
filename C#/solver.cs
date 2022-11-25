@@ -183,19 +183,18 @@ namespace Sudoku_solver
 
             regionID = 0;
 
-            for(int i=0; i<(Xgrid.GetLength(0) - regionHeight); i=i+regionHeight)
+            for(int i=0; i<=(Xgrid.GetLength(0) - regionHeight); i=i+regionHeight)
             {
-                for(int j=0; j<(Xgrid.GetLength(1) - regionWidth); j=j+regionWidth)
+                for(int j=0; j<=(Xgrid.GetLength(0) - regionWidth); j=j+regionWidth)
                 {
                     for(int k=i; k<(i+regionHeight); k++)
                     {
-                        for(int l=j; l<(j+regionWidth); l++)
+                        for(int l=j; l<(j+regionHeight); l++)
                         {
-                            res[k,j] = regionID;
+                            res[k,l] = regionID;
                         }
-
-                        regionID++;
                     }
+                    regionID++;
                 }
             }
 
