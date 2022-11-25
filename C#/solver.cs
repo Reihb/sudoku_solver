@@ -210,7 +210,7 @@ namespace Sudoku_solver
             cross = GetCrossNumbers(Xgrid, i,j);
             region = GetRegionNumbers(Xgrid, GetRegionID(XregionTable, i, j));
 
-            res = GetPossibilitiesUnion(cross, region);
+            res = GetPossibilitiesUnion(Xgrid,cross, region);
 
             return res;
         }

@@ -20,6 +20,8 @@ class Main_program
 
         int i,j;
 
+        i=0;
+
         while(i != 10)
         {
             Console.WriteLine("Entrez i puis j");
