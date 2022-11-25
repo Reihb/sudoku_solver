@@ -73,17 +73,6 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
-        public static int GetRegionID(int[,] XregionTable, int i, int j)
-        {
-            int res;
-
-            res = XregionTable[i,j];
-
-            return res;
-        }
-
-        //---------------------------------------------------------------------------------------
-
         public static int[,] GenerateRegionTable(char[,] Xgrid)
         {
             int regionWidth, regionHeight, regionID;
@@ -107,6 +96,17 @@ namespace Sudoku_solver
                     regionID++;
                 }
             }
+
+            return res;
+        }
+
+        //---------------------------------------------------------------------------------------
+
+        public static int GetRegionID(int[,] XregionTable, int i, int j)
+        {
+            int res;
+
+            res = XregionTable[i,j];
 
             return res;
         }
