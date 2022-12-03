@@ -11,16 +11,28 @@ ul > li + li {
 main{
     background-color:white;
 }
+div {
+    display:block;
+    padding-left: 25%;
+    font-family:Oxygen;
+    color:#82a0e6;
+    border-bottom: 2px solid rgba(128,128,128,.5);
+}
 body{
     background-color:#303f9f;
     margin:0;
 }
+
 li a{
     display:block;
     font-size: 30px;
     text-decoration: none;
     color:white;
     font-family: Righteous;
+    transition-duration: 200ms;
+}
+li:hover{
+    background-color:grey;
 }
 li {
     display: flex;
@@ -42,7 +54,19 @@ nav {
     position: sticky;
     top:0;
     height:100px;
+    min-width:100%;
+}
+table{
+    border-collapse:collapse;
+    width:25%;
+}
+th,td{
+    border: 2px solid #82a0e6;
 }
 figure.github img{
     max-width: 10%;
+}
+figure.github{
+    display:inline;
+    justify-content: right;
 }
