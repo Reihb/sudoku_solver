@@ -107,7 +107,7 @@ figure.github img{
 footer{
     height: 5rem;
 }
-/*design for smartphones*/
+/*design for mobile devices*/
 @media(max-width: 820px){
     nav{
         height:10vw;
