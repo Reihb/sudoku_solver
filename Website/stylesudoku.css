@@ -82,7 +82,7 @@ section {
     width: 90%;
 }
 
-section.grilles{
+#grilles{
     flex-flow: column;
 }
 
