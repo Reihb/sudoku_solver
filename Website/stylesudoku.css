@@ -18,7 +18,7 @@ nav {
     flex-direction: row;
     align-items: center;
     background-color:#303f9f;    
-    height:6rem;
+    height:5rem;
 }
 
 nav img {
@@ -40,6 +40,7 @@ li{
 }
 
 li:hover{
+    padding-right: 3rem;
     background-color:grey;
 }
 
@@ -55,10 +56,21 @@ li a{
     font-size: 2rem;     
 }
 
+h1{
+    width:fit-content;
+    font-size: 3rem;
+    text-shadow: grey 0.2rem 0.2rem 0.3rem;
+    border: 0.2rem solid grey;
+    border-radius: 1rem;
+    box-shadow: grey 0.2rem 0.2rem 0.3rem;
+}
+
 section {
     display: flex;
     flex-flow: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
     color:#82a0e6;
     border-bottom: 2px solid grey;
     width: 90%;
@@ -69,6 +81,7 @@ section.grilles{
 }
 
 div.tableaux{
+    width: 100%;
     display: flex;
     flex-flow: row;
     flex-wrap: nowrap;
@@ -89,6 +102,5 @@ figure.github img{
 }
 
 footer{
-    margin-top: 1rem;
     height: 5rem;
 }
