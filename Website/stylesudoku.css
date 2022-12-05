@@ -1,0 +1,93 @@
+main{
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    background-color:white;
+    font-family:Oxygen;
+}
+
+body{
+    background-color:#303f9f;
+    margin:0;
+}
+
+nav {
+    position: sticky;
+    top:0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color:#303f9f;    
+    height:6rem;
+}
+
+nav img {
+    max-width: 5%;
+    padding: 10px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    width: 100%;
+    list-style-type: none;
+    font-family: Righteous;
+}
+
+li{
+    transition-duration: 500ms;
+}
+
+li:hover{
+    background-color:grey;
+}
+
+ul > li + li {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-left: 2px solid grey;
+}
+
+li a{
+    color:white;
+    text-decoration: none;   
+    font-size: 2rem;     
+}
+
+section {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    color:#82a0e6;
+    border-bottom: 2px solid grey;
+    width: 90%;
+}
+
+section.grilles{
+    flex-flow: column;
+}
+
+div.tableaux{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+table{
+    border-collapse:collapse;
+    width:25%;
+}
+th,td{
+    border: 2px solid #82a0e6;
+    text-align: center;
+}
+
+figure.github img{
+    width: 12rem;
+}
+
+footer{
+    height: 5rem;
+}
