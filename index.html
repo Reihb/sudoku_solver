@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="Website/stylesudoku.css">
+    <link rel="shortcut icon" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Righteous&display=swap" rel="stylesheet">
+    <title>Sudoku Solver</title>
+</head>
+<body>
+<main>
+    <nav class="sticky">
+        <img src="logo.png" alt="logo site">
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#historique">Historique</a></li>
+            <li><a href="#regles">Règles</a></li>
+            <li><a href="#grilles">Grilles</a></li>
+            <li><a href="#sites">Sites</a></li>
+            <li><a href="#jeux">Jeux</a></li>
+        </ul>
+    </nav>
+    <section id="accueil">
+        <div id="texte">
+            <h1>Sudoku Solver</h1>
+            <p>Petite presentation</p>
+        </div>
+        <figure class="github">
+            <a href="https://github.com/Reihb/sudoku_solver"><img src="https://th.bing.com/th/id/R.724794164fb289dd2f7d69dde7ac3bc0?rik=H5bTVhjLhZdHOQ&pid=ImgRaw&r=0" alt="Lien vers github"></a>
+        </figure>
+    </section>
+    <section id="historique">
+        <div id="texte">
+            <h2>Historique du jeu</h2>
+            <p>Paragraphe historique du jeu</p>
+        </div>
+        <figure>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Sudoku.jpg/220px-Sudoku.jpg" alt="image premier sudoku">
+        </figure>
+    </section>
+    <section id="regles">
+        <div id="texte">
+            <h2>Règles du jeu</h2>
+            <p>(Règles,paragraphe et possible tableau explicative)</p>
+        </div>
+    </section>
+    <section class="grilles">
+        <p>Grilles ICI</p>
+        <div class="tableaux">
+            <table>
+                <tr>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>0</td>
+                        <td>7</td>
+                        <td>9</td>
+                </tr>
+                <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>7</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                </tr>
+                <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>8</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>7</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>0</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>8</td>
+                </tr>
+                <tr>
+                        <td>9</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>8</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>6</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>9</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                </tr>
+                <tr>
+                        <td>8</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>2</td>
+                </tr>      
+            </table>
+            <table>
+                <tr>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>8</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>7</td>
+                        <td>9</td>
+                </tr>
+                <tr>
+                        <td>2</td>
+                        <td>6</td>
+                        <td>9</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>1</td>
+                </tr>
+                <tr>
+                        <td>7</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>4</td>
+                </tr>
+                <tr>
+                        <td>3</td>
+                        <td>7</td>
+                        <td>6</td>
+                        <td>9</td>
+                        <td>4</td>
+                        <td>8</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>5</td>
+                </tr>
+                <tr>
+                        <td>1</td>
+                        <td>8</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>7</td>
+                        <td>5</td>
+                        <td>9</td>
+                        <td>6</td>
+                        <td>3</td>
+                </tr>
+                <tr>
+                        <td>5</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>1</td>
+                        <td>7</td>
+                        <td>4</td>
+                        <td>8</td>
+                </tr>
+                <tr>
+                        <td>9</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>7</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>8</td>
+                        <td>6</td>
+                </tr>
+                <tr>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>7</td>
+                </tr>
+                <tr>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>7</td>
+                        <td>6</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>2</td>
+                </tr>
+            </table>
+        </div>
+        <!--Généré automatiquement-->
+        <p>explication tailles difficultés ICI</p>
+    </section>
+    <section id="sites">
+        <article>
+            <header>
+                <h3>Site 1</h3>
+            </header>
+            <p>Paragraphe expliquant le site</p>
+            <p>Image presentant le site</p>
+        </article>
+        <article>
+            <header>
+                <h3>Site 2</h3>
+            </header>
+            <p>Paragraphe expliquant le site</p>
+            <p>Image presentant le site</p>
+        </article>
+    </section>
+    <section id="jeux">
+        <article>
+            <header>
+                <h3>Jeu 1</h3>
+                <p>Image jeu 1</p>
+            </header>
+            <p>Explication jeu</p>
+            <table>
+                <tr><th>Exemple</th><th>Exemple</th></tr>
+                <tr><td>1/2 joueurs</td><td>30 mins</td></tr>
+            </table>
+        </article>
+        <article>
+            <header>
+                <h3>Jeu 2</h3>
+                <p>Image jeu 2</p>
+            </header>
+            <p>Explication jeu</p>
+            <table>
+                <tr><th>Exemple</th><th>Exemple</th></tr>
+                <tr><td>3/4 joueurs</td><td>45 mins</td></tr>
+            </table>
+        </article>
+    </section>
+    
+</main>
+<footer>
+</footer>
+</body>
+</html>
