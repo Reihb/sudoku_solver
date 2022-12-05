@@ -4,6 +4,8 @@
 
 This is part of our student work at Unistra
 
+* <a href="https://reihb.github.io/sudoku_solver/">Website</a>
+
 ## Credits
 
 * [Reihb](https://github.com/Reihb)
