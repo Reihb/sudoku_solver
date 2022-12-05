@@ -122,4 +122,7 @@ footer{
     figure.github img{
         width:25vw
     }
+    section{
+        flex-flow:column;
+    }
 }
