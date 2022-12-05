@@ -93,11 +93,11 @@ namespace Sudoku_solver_API
 
         public static void InsertGridHTML(char[,] Xgrid, string Xpath)
         {
-            string temp ="\n";
+            string temp ="";
 
             for(int i=0; i<Xgrid.GetLength(0); i++)
             {
-                temp += "\t\t<tr>";
+                temp += "\n\t\t<tr>";
 
                 for(int j=0; j<Xgrid.GetLength(1); j++)
                 {
