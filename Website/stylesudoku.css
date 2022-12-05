@@ -86,6 +86,22 @@ section.grilles{
     flex-flow: column;
 }
 
+article{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+article header{
+    text-align: center;
+}
+
+article img {
+    height: 12rem;
+    width: 20rem;
+}
+
 div.tableaux{
     width: 100%;
     display: flex;
@@ -109,11 +125,6 @@ figure.github img{
 
 footer{
     height: 5rem;
-}
-
-article img {
-    height: 15rem;
-    width: 20rem;
 }
 
 /*design for mobile devices*/
