@@ -20,7 +20,7 @@ nav {
     align-items: center;
     background-color:#303f9f;    
     height:5vw;
-    max-width: 99.1vw;
+    max-width: 100%;
 }
 
 nav img {
@@ -42,8 +42,10 @@ li{
 }
 
 li:hover{
-    padding-right: 3rem;
+    padding-right: 2.5rem;
+    border-radius: 0.3rem;
     background-color:grey;
+    box-shadow: black 0.2rem 0.2rem 0.4rem;
 }
 
 ul > li + li {
@@ -56,7 +58,6 @@ li a{
     color:white;
     text-decoration: none;   
     font-size: 2vw;
-    max-font-size: 100%;
 }
 
 h1{
@@ -74,6 +75,8 @@ section {
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
     color:#82a0e6;
     border-bottom: 2px solid grey;
     width: 90%;
