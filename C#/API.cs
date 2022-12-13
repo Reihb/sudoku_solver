@@ -91,7 +91,7 @@ namespace Sudoku_solver_API
             return res;
         }
 
-        public static void InsertGridHTML(char[,] Xgrid, string Xpath)
+        public static string GridToHTML(char[,] Xgrid, string Xpath)
         {
             string temp ="";
 
@@ -107,7 +107,7 @@ namespace Sudoku_solver_API
                 temp += "\n\t\t</tr>";
             }
 
-            Console.WriteLine(temp);
+            return string;
         }
     }
 }
