@@ -91,21 +91,25 @@ namespace Sudoku_solver_API
             return res;
         }
 
-        public static string GridToHTML(char[,] Xgrid, string Xpath)
+        public static string GridToHTML(char[,] Xgrid)
         {
             string temp ="";
 
+            temp += "            <table>";
+
             for(int i=0; i<Xgrid.GetLength(0); i++)
             {
-                temp += "\n\t\t\t\t<tr>";
+                temp += "\n                <tr>";
 
                 for(int j=0; j<Xgrid.GetLength(1); j++)
                 {
-                    temp += "\n\t\t\t\t\t<td>" + Xgrid[i,j].ToString() + "</td>";                    
+                    temp += "\n                        <td>" + Xgrid[i,j].ToString() + "</td>";                    
                 }
 
-                temp += "\n\t\t\t\t</tr>";
+                temp += "\n                </tr>";
             }
+
+            temp += "\n            </table>";
 
             return string;
         }
