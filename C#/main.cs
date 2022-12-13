@@ -18,7 +18,9 @@ class Main_program
         char[,] grid = SudokuAPI.RetrieveGrid(path);
         int[,] RegionTable=Sudoku.GenerateRegionTable(grid);
 
-        int i,j;
+        Console.WriteLine(SudokuAPI.GridToHTML(grid));
+
+        /*int i,j;
 
         i=0;
 
@@ -33,7 +35,7 @@ class Main_program
             Console.WriteLine("Liste des possibilités : ");
             Debug.ShowListChar(Sudoku.GetPossibilitiesFromPos(grid, RegionTable, i, j));
             Console.WriteLine();
-        }
+        }*/
 
         Console.ReadLine();
     }
