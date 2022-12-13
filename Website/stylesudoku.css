@@ -109,6 +109,7 @@ div.tableaux{
     flex-flow: row;
     flex-wrap: nowrap;
     justify-content: space-around;
+    margin-bottom: 5rem;
 }
 
 table{
