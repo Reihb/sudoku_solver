@@ -111,7 +111,7 @@ namespace Sudoku_solver_API
 
             temp += "\n            </table>";
 
-            return string;
+            return temp;
         }
     }
 }
