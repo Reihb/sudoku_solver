@@ -97,14 +97,14 @@ namespace Sudoku_solver_API
 
             for(int i=0; i<Xgrid.GetLength(0); i++)
             {
-                temp += "\n\t\t<tr>";
+                temp += "\n\t\t\t\t<tr>";
 
                 for(int j=0; j<Xgrid.GetLength(1); j++)
                 {
-                    temp += "\n\t\t\t<td>" + Xgrid[i,j].ToString() + "</td>";                    
+                    temp += "\n\t\t\t\t\t<td>" + Xgrid[i,j].ToString() + "</td>";                    
                 }
 
-                temp += "\n\t\t</tr>";
+                temp += "\n\t\t\t\t</tr>";
             }
 
             return string;
