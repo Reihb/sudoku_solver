@@ -113,5 +113,12 @@ namespace Sudoku_solver_API
 
             return temp;
         }
+
+        public static void InsertGridsHTML(char[,] Xgrid, char[,] Xgrid2)
+        {
+            const string PATH = "../index.html";
+
+            FileStream fs = new FileStream(PATH);
+        }
     }
 }
