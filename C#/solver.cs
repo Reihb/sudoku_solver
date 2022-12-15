@@ -221,6 +221,7 @@ namespace Sudoku_solver
 
             return res;
         }
+        
         public static char[,] Solverr(char[,] Xgrid, int[,] XregionTable){
             random r=new Random();
             List<char> possibi= new List<char>;
@@ -251,6 +252,23 @@ namespace Sudoku_solver
                 }
             }
             return Xgrid;
+        }
+        
+        public static char[,] Clone2DTableChar(char[,] Xtab)
+        {
+            int i,j;
+
+            char[,]tab2 = new char[Xtab.GetLength(0), Xtab.GetLength(1)];
+
+            for(i=0; i<Xtab.GetLength(0); i++)
+            {
+                for(j=0; j<Xtab.GetLength(1); j++)
+                {
+                    tab2[i,j] = Xtab[i,j];
+                }
+            }
+
+            return tab2;
         }
     }
 }
