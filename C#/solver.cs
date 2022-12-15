@@ -228,6 +228,7 @@ namespace Sudoku_solver
             List<char> possibi= new List<char>();
             bool possible;
             bool solved=false;
+            char[,] resultat= new char[,]();
             while(solved==false){
                 char[,] inprogress=Clone2DTableChar(Xgrid);
                 solved=true;
@@ -255,8 +256,9 @@ namespace Sudoku_solver
                         }
                     }
                 }
+                resultat=Clone2DTableChar(inprogress);
             }
-            return inprogress;
+            return resultat;
         }
         
         public static char[,] Clone2DTableChar(char[,] Xtab)
