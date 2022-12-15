@@ -232,29 +232,29 @@ namespace Sudoku_solver
                 char[,] encours=Clone2DTableChar(template);
                 solved=true;
                 possible=true;
-                for(int i=0;i<Xgrid.GetLength(0) && possible==true;i++){
-                    for(int j=0;j<Xgrid.GetLength(1) && possible==true;j++){
-                        if(Xgrid[i,j]=='0'){
-                            possibi=GetPossibilitiesFromPos(Xgrid,XregionTable,i,j);
+                for(int i=0;i<encours.GetLength(0) && possible==true;i++){
+                    for(int j=0;j<encours.GetLength(1) && possible==true;j++){
+                        if(encours[i,j]=='0'){
+                            possibi=GetPossibilitiesFromPos(encours,XregionTable,i,j);
                             if(possibi.Count==0){
                                 possible=false;
                             }
                             else{
                                 int number=r.Next(possibi.Count-1);
-                                Xgrid[i,j]=possibi[number];
+                                encours[i,j]=possibi[number];
                             }
                         }
                     }
                 }
-                for(int i=0;i<Xgrid.GetLength(0) && solved==true;i++){
-                    for(int j=0;j<Xgrid.GetLength(1) && solved==true;j++){
-                        if(Xgrid[i,j]=='0'){
+                for(int i=0;i<encours.GetLength(0) && solved==true;i++){
+                    for(int j=0;j<encours.GetLength(1) && solved==true;j++){
+                        if(encours[i,j]=='0'){
                             solved=false;
                         }
                     }
                 }
             }
-            return Xgrid;
+            return encours;
         }
         
         public static char[,] Clone2DTableChar(char[,] Xtab)
