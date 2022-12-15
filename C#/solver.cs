@@ -228,36 +228,35 @@ namespace Sudoku_solver
             List<char> possibi= new List<char>();
             bool possible;
             bool solved=false;
-            char[,] template=Clone2DTableChar(Xgrid);
             while(solved==false){
-                Xgrid=Clone2DTableChar(template);
+                char[,] inprogress=Clone2DTableChar(Xgrid);
                 solved=true;
                 possible=true;
-                for(int i=0;i<Xgrid.GetLength(0) && possible==true;i++){
-                    for(int j=0;j<Xgrid.GetLength(1) && possible==true;j++){
-                        if(Xgrid[i,j]=='0'){
-                            possibi=GetPossibilitiesFromPos(Xgrid,XregionTable,i,j);
+                for(int i=0;i<inprogress.GetLength(0) && possible==true;i++){
+                    for(int j=0;j<inprogress.GetLength(1) && possible==true;j++){
+                        if(inprogress[i,j]=='0'){
+                            possibi=GetPossibilitiesFromPos(inprogress,XregionTable,i,j);
                             if(possibi.Count==0){
                                 possible=false;
                             }
                             else{
                                 int number=r.Next(possibi.Count-1);
-                                Xgrid[i,j]=possibi[number];
+                                inprogress[i,j]=possibi[number];
                             }
                         }
                     }
                 }
                 Debug.ShowGrid();
                 Console.ReadLine();
-                for(int i=0;i<Xgrid.GetLength(0) && solved==true;i++){
-                    for(int j=0;j<Xgrid.GetLength(1) && solved==true;j++){
-                        if(Xgrid[i,j]=='0'){
+                for(int i=0;i<inprogress.GetLength(0) && solved==true;i++){
+                    for(int j=0;j<inprogress.GetLength(1) && solved==true;j++){
+                        if(inprogress[i,j]=='0'){
                             solved=false;
                         }
                     }
                 }
             }
-            return Xgrid;
+            return inprogress;
         }
         
         public static char[,] Clone2DTableChar(char[,] Xtab)
