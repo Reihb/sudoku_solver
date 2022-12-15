@@ -103,7 +103,14 @@ namespace Sudoku_solver_API
 
                 for(int j=0; j<Xgrid.GetLength(1); j++)
                 {
-                    temp += "\n                        <td>" + Xgrid[i,j].ToString() + "</td>";                    
+                    if(Xgrid[i,j] != '0')
+                    {
+                        temp += "\n                        <td>" + Xgrid[i,j].ToString() + "</td>";
+                    }
+                    else
+                    {
+                        temp += "\n                        <td> "+"</td>";
+                    }
                 }
 
                 temp += "\n                </tr>";
@@ -116,9 +123,24 @@ namespace Sudoku_solver_API
 
         public static void InsertGridsHTML(char[,] Xgrid, char[,] Xgrid2)
         {
+            int nb_line = 1;
+            string line;
             const string PATH = "../index.html";
 
-            FileStream fs = new FileStream(PATH);
+            FileStream fs = new FileStream(PATH, FileMode.Open, FileAccess.ReadWrite);
+
+            StreamReader sr = new StreamReader(fs);
+
+            line = sr.ReadLine();
+
+            while((line != null) && (line != "        <!-- Begin -->"))
+            {
+                line = sr.ReadLine();
+                nb_line++;
+            }
+
+            Console.WriteLine(nb_line);
         }
+    }
     }
 }
