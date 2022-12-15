@@ -232,21 +232,19 @@ namespace Sudoku_solver
             char[,] currentTry= new char[Xgrid.GetLength(0),Xgrid.GetLength(1)];
 
             bool isSolvable = false;
-            bool isSolved = true;
+            bool isSolved = false;
 
             Random r=new Random();
             
-            while(isSolvable == false)
+            while(!isSolved)
             {
-                
                 Copy2DTableChar(Xgrid,currentTry);
 
                 isSolvable = true;
 
-                for(int i=0;i<currentTry.GetLength(0) && isSolvable == true; i++)
+                for(int i=0;i<currentTry.GetLength(0) && isSolvable; i++)
                 {
-
-                    for(int j=0;j<currentTry.GetLength(1) && isSolvable == true; j++)
+                    for(int j=0;j<currentTry.GetLength(1) && isSolvable; j++)
                     {
                         if(currentTry[i,j] == '0')
                         {
@@ -264,13 +262,15 @@ namespace Sudoku_solver
                     }
                 }
 
-                for(int i=0;i<currentTry.GetLength(0) && isSolved == true;i++)
+                isSolved = true;
+
+                for(int i=0;i<currentTry.GetLength(0) && isSolved;i++)
                 {
-                    for(int j=0;j<currentTry.GetLength(1) && isSolved == true;j++)
+                    for(int j=0;j<currentTry.GetLength(1) && isSolved;j++)
                     {
                         if(currentTry[i,j]=='0')
                         {
-                            isSolved=false;
+                            isSolved = false;
                         }
                     }
                 }
