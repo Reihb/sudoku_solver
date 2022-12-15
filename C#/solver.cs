@@ -227,52 +227,58 @@ namespace Sudoku_solver
         
         public static char[,] BruteforceSolve(char[,] Xgrid, int[,] XregionTable){
 
-            List<char> possibi= new List<char>();
+            List<char> possibilities= new List<char>();
+
             char[,] currentTry= new char[Xgrid.GetLength(0),Xgrid.GetLength(1)];
-            bool possible;
-            bool solved = false;
+
+            bool isSolvable = false;
+            bool isSolved = true;
+
             int number;
+
             Random r=new Random();
             
-            while(solved == false)
+            while(isSolvable == false)
             {
                 
                 Copy2DTableChar(Xgrid,currentTry);
 
-                solved = true;
-                possible = true;
+                isSolvable = true;
 
-                for(int i=0;i<currentTry.GetLength(0) && possible == true; i++)
+                for(int i=0;i<currentTry.GetLength(0) && isSolvable == true; i++)
                 {
 
-                    for(int j=0;j<currentTry.GetLength(1) && possible == true; j++)
+                    for(int j=0;j<currentTry.GetLength(1) && isSolvable == true; j++)
                     {
-
                         if(currentTry[i,j] == '0')
                         {
-                            if(GetPossibilitiesFromPos(currentTry,XregionTable,i,j) == 0)
+                            possibilities = GetPossibilitiesFromPos(currentTry,XregionTable,i,j);
+
+                            if(possibilities.Count == 0)
                             {
-                                possible = false;
+                                isSolvable = false;
                             }
                             else
                             {
-                                number=r.Next(possibi.Count);
-                                inprogress[i,j]=possibi[number];
+                                currentTry[i,j]=possibilities[r.Next(possibi.Count)];
                             }
                         }
                     }
                 }
 
-                for(int i=0;i<inprogress.GetLength(0) && solved==true;i++){
-                    for(int j=0;j<inprogress.GetLength(1) && solved==true;j++){
-                        if(inprogress[i,j]=='0'){
-                            solved=false;
+                for(int i=0;i<currentTry.GetLength(0) && isSolved == true;i++)
+                {
+                    for(int j=0;j<inprogress.GetLength(1) && isSolved == true;j++)
+                    {
+                        if(inprogress[i,j]=='0')
+                        {
+                            isSolved=false;
                         }
                     }
                 }
-                resultat=Clone2DTableChar(inprogress);
-            }   
-            return resultat;
+            }
+
+            return currentTry;
         }
 
         //---------------------------------------------------------------------------------------
