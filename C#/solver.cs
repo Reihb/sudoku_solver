@@ -146,7 +146,7 @@ namespace Sudoku_solver
             SetRegionWH(Xgrid, out regionWidth, out regionHeight);
 
             int i = (XregionID/regionHeight) * (regionHeight);
-            int j = (regionHeight * XregionID) % (regionHeight * regionWidth);
+            int j = (regionWidth * XregionID) % (regionHeight * regionWidth);
 
             for(int k=0; k<regionHeight; k++)
             {
