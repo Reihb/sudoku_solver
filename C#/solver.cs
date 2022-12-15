@@ -234,8 +234,6 @@ namespace Sudoku_solver
             bool isSolvable = false;
             bool isSolved = true;
 
-            int number;
-
             Random r=new Random();
             
             while(isSolvable == false)
@@ -260,7 +258,7 @@ namespace Sudoku_solver
                             }
                             else
                             {
-                                currentTry[i,j]=possibilities[r.Next(possibi.Count)];
+                                currentTry[i,j]=possibilities[r.Next(possibilities.Count)];
                             }
                         }
                     }
@@ -268,9 +266,9 @@ namespace Sudoku_solver
 
                 for(int i=0;i<currentTry.GetLength(0) && isSolved == true;i++)
                 {
-                    for(int j=0;j<inprogress.GetLength(1) && isSolved == true;j++)
+                    for(int j=0;j<currentTry.GetLength(1) && isSolved == true;j++)
                     {
-                        if(inprogress[i,j]=='0')
+                        if(currentTry[i,j]=='0')
                         {
                             isSolved=false;
                         }
