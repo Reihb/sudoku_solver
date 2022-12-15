@@ -229,7 +229,7 @@ namespace Sudoku_solver
             bool solved=false;
             char[,] template=Clone2DTableChar(Xgrid);
             while(solved==false){
-                Xgrid=Clone2DTableChar(template);
+                char[,] encours=Clone2DTableChar(template);
                 solved=true;
                 possible=true;
                 for(int i=0;i<Xgrid.GetLength(0) && possible==true;i++){
