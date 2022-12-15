@@ -142,5 +142,4 @@ namespace Sudoku_solver_API
             Console.WriteLine(nb_line);
         }
     }
-    }
 }
