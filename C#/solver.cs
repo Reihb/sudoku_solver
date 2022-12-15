@@ -89,7 +89,7 @@ namespace Sudoku_solver
                 {
                     for(int k=i; k<(i+regionHeight); k++)
                     {
-                        for(int l=j; l<(j+regionHeight); l++)
+                        for(int l=j; l<(j+regionWidth); l++)
                         {
                             res[k,l] = regionID;
                         }
