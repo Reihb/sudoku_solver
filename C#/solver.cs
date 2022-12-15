@@ -224,7 +224,7 @@ namespace Sudoku_solver
         
         public static char[,] Solverr(char[,] Xgrid, int[,] XregionTable){
             random r=new Random();
-            List<char> possibi= new List<char>;
+            List<char> possibi= new List<char>();
             bool possible;
             bool solved=false;
             char[,] template=Clone2DTableChar(Xgrid);
