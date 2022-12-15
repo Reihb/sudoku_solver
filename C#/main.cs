@@ -18,7 +18,7 @@ class Main_program
         char[,] grid = SudokuAPI.RetrieveGrid(path);
         int[,] RegionTable=Sudoku.GenerateRegionTable(grid);
 
-        Console.WriteLine(SudokuAPI.GridToHTML(grid));
+        Debug.ShowGrid(Sudoku.BruteforceSolve(grid, RegionTable));
 
         /*int i,j;
 
