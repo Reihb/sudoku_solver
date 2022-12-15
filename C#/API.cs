@@ -138,8 +138,6 @@ namespace Sudoku_solver_API
                 line = sr.ReadLine();
                 nb_line++;
             }
-
-            Console.WriteLine(nb_line);
         }
     }
 }
