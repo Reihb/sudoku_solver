@@ -224,12 +224,13 @@ namespace Sudoku_solver
         }
         
         public static char[,] Solverr(char[,] Xgrid, int[,] XregionTable){
-            Random r=new Random();
             List<char> possibi= new List<char>();
             bool possible;
             bool solved=false;
-            char[,] resultat= new char[,]();
+            int number;
+            char[,] resultat= new char[Xgrid.GetLength(0),Xgrid.GetLength(1)];
             while(solved==false){
+                Random r=new Random();
                 char[,] inprogress=Clone2DTableChar(Xgrid);
                 solved=true;
                 possible=true;
@@ -241,14 +242,12 @@ namespace Sudoku_solver
                                 possible=false;
                             }
                             else{
-                                int number=r.Next(possibi.Count-1);
+                                number=r.Next(possibi.Count);
                                 inprogress[i,j]=possibi[number];
                             }
                         }
                     }
                 }
-                Debug.ShowGrid();
-                Console.ReadLine();
                 for(int i=0;i<inprogress.GetLength(0) && solved==true;i++){
                     for(int j=0;j<inprogress.GetLength(1) && solved==true;j++){
                         if(inprogress[i,j]=='0'){
@@ -257,7 +256,7 @@ namespace Sudoku_solver
                     }
                 }
                 resultat=Clone2DTableChar(inprogress);
-            }
+            }   
             return resultat;
         }
         
