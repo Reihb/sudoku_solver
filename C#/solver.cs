@@ -221,5 +221,36 @@ namespace Sudoku_solver
 
             return res;
         }
+        public static char[,] Solverr(char[,] Xgrid, int[,] XregionTable){
+            random r=new Random();
+            List<char> possibi= new List<char>;
+            bool possible;
+            bool solved=false;
+            char[,] template=Copy2DTableChar(Xgrid);
+            while(solved==false){
+                for(int i=0;i<Xgrid.GetLength(0) && possible==true;i++){
+                    for(int j=0;j<Xgrid.GetLength(1) && possible==true;j++){
+                        if(Xgrid[i,j]=='0'){
+                            possibi=GetPossibilitiesFromPos(Xgrid,XregionTable,i,j);
+                            if(possibi.Count==0){
+                                possible=false;
+                            }
+                            else{
+                                int number=r.Next(possibi.Count-1);
+                                Xgrid[i,j]=possibi[number];
+                            }
+                        }
+                    }
+                }
+                for(int i=0;i<Xgrid.GetLength(0) && solved==true;i++){
+                    for(int j=0;j<Xgrid.GetLength(1) && solved==true;j++){
+                        if(Xgrid[i,j]=='0'){
+                            solved=false;
+                        }
+                    }
+                }
+            }
+            return Xgrid;
+        }
     }
 }
