@@ -222,32 +222,47 @@ namespace Sudoku_solver
 
             return res;
         }
+
+        //---------------------------------------------------------------------------------------
         
-        public static char[,] Solverr(char[,] Xgrid, int[,] XregionTable){
+        public static char[,] BruteforceSolve(char[,] Xgrid, int[,] XregionTable){
+
             List<char> possibi= new List<char>();
+            char[,] currentTry= new char[Xgrid.GetLength(0),Xgrid.GetLength(1)];
             bool possible;
-            bool solved=false;
+            bool solved = false;
             int number;
-            char[,] resultat= new char[Xgrid.GetLength(0),Xgrid.GetLength(1)];
-            while(solved==false){
-                Random r=new Random();
-                char[,] inprogress=Clone2DTableChar(Xgrid);
-                solved=true;
-                possible=true;
-                for(int i=0;i<inprogress.GetLength(0) && possible==true;i++){
-                    for(int j=0;j<inprogress.GetLength(1) && possible==true;j++){
-                        if(inprogress[i,j]=='0'){
-                            possibi=GetPossibilitiesFromPos(inprogress,XregionTable,i,j);
-                            if(possibi.Count==0){
-                                possible=false;
+            Random r=new Random();
+            
+            while(solved == false)
+            {
+                
+                Copy2DTableChar(Xgrid,currentTry);
+
+                solved = true;
+                possible = true;
+
+                for(int i=0;i<currentTry.GetLength(0) && possible == true; i++)
+                {
+
+                    for(int j=0;j<currentTry.GetLength(1) && possible == true; j++)
+                    {
+
+                        if(currentTry[i,j] == '0')
+                        {
+                            if(GetPossibilitiesFromPos(currentTry,XregionTable,i,j) == 0)
+                            {
+                                possible = false;
                             }
-                            else{
+                            else
+                            {
                                 number=r.Next(possibi.Count);
                                 inprogress[i,j]=possibi[number];
                             }
                         }
                     }
                 }
+
                 for(int i=0;i<inprogress.GetLength(0) && solved==true;i++){
                     for(int j=0;j<inprogress.GetLength(1) && solved==true;j++){
                         if(inprogress[i,j]=='0'){
@@ -259,22 +274,20 @@ namespace Sudoku_solver
             }   
             return resultat;
         }
+
+        //---------------------------------------------------------------------------------------
         
-        public static char[,] Clone2DTableChar(char[,] Xtab)
+        public static void Copy2DTableChar(char[,] Xtab, char[,] Xtab2)
         {
             int i,j;
-
-            char[,]tab2 = new char[Xtab.GetLength(0), Xtab.GetLength(1)];
 
             for(i=0; i<Xtab.GetLength(0); i++)
             {
                 for(j=0; j<Xtab.GetLength(1); j++)
                 {
-                    tab2[i,j] = Xtab[i,j];
+                    Xtab2[i,j] = Xtab[i,j];
                 }
             }
-
-            return tab2;
         }
     }
 }
