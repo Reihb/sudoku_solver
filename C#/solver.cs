@@ -234,6 +234,8 @@ namespace Sudoku_solver
             bool isSolvable = false;
             bool isSolved = false;
 
+            int tries=0;
+
             Random r=new Random();
             
             while(!isSolved)
@@ -274,7 +276,11 @@ namespace Sudoku_solver
                         }
                     }
                 }
+
+                tries ++;
             }
+
+            Console.WriteLine("Number of tries : " + tries);
 
             return currentTry;
         }
