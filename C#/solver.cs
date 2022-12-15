@@ -223,7 +223,7 @@ namespace Sudoku_solver
         }
         
         public static char[,] Solverr(char[,] Xgrid, int[,] XregionTable){
-            random r=new Random();
+            Random r=new Random();
             List<char> possibi= new List<char>();
             bool possible;
             bool solved=false;
