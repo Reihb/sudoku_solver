@@ -227,8 +227,11 @@ namespace Sudoku_solver
             List<char> possibi= new List<char>;
             bool possible;
             bool solved=false;
-            char[,] template=Copy2DTableChar(Xgrid);
+            char[,] template=Clone2DTableChar(Xgrid);
             while(solved==false){
+                Xgrid=Clone2DTableChar(template);
+                solved=true;
+                possible=true;
                 for(int i=0;i<Xgrid.GetLength(0) && possible==true;i++){
                     for(int j=0;j<Xgrid.GetLength(1) && possible==true;j++){
                         if(Xgrid[i,j]=='0'){
