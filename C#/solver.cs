@@ -209,6 +209,39 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
+        public static bool CheckIfSolved(char[,] Xgrid, int[] XregionTable, int i,int j)
+        {
+            bool res = true;
+
+            int times = 0;
+
+            for(int i=0;i<Xgrid.GetLength(0); i++)
+            {
+                for(int j=0;i<Xgrid.GetLength(1); j++)
+                {
+                    foreach(val char in GetCrossNumbers(Xgrid, i,j))
+                    {
+                        foreach(val2 char in GetRegionNumbers(Xgrid,GetRegionID(XregionTable,i,j)))
+                        {
+                            if(val == val2)
+                            {
+                                times++;
+                            }
+                        }                  
+                    }
+
+                    if(times > 2)
+                    {
+                        res = false;
+                    }
+
+                    times = 0;
+                }
+            }
+        }
+
+        //---------------------------------------------------------------------------------------
+
         public static List<char> GetPossibilitiesFromPos(char[,] Xgrid, int[,] XregionTable, int i, int j)
         {
             List<char> cross;
@@ -296,6 +329,42 @@ namespace Sudoku_solver
                 for(j=0; j<Xtab.GetLength(1); j++)
                 {
                     Xtab2[i,j] = Xtab[i,j];
+                }
+            }
+        }
+
+        public static char[,] DumbBruteforceSolve(char[,] Xgrid, int[,] XregionTable)
+        {
+            char[] possibilities = new char[Xgrid.GetLength(0)];
+            char[,] currentTry = new char[Xgrid.GetLength(0),Xgrid.GetLength(1)]
+
+            bool isSolved = false;
+
+            Random r = new Random();
+
+            for(int i=0; i<Xgrid.GetLength(0); i++)
+            {
+                possibilities[i] = char.Parse(i.ToString());
+            }
+
+            while(!isSolved)
+            {
+                Copy2DTableChar(Xgrid,currentTry);
+
+                for(int i=0; i<currentTry.GetLength(0); i++)
+                {
+                    for(int j=0; j<currentTry.GetLength(1); j++)
+                    {
+                        currentTry[i,j] = possibilities[r.Next(possibilities.length)];
+                    }
+                }
+
+                for(int i=0; i<currentTry.GetLength(0); i++)
+                {
+                    for(int j=0; j<currentTry.GetLength(1);j++)
+                    {
+                        if(currentTry[i,j])
+                    }
                 }
             }
         }
