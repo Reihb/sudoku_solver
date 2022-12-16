@@ -29,7 +29,7 @@ namespace Sudoku_solver
 
             for(int a=0; a<Xgrid.GetLength(0); a++)
             {
-                if((Xgrid[i,a] != '0') && (!res.Contains(Xgrid[i,a])))
+                if((Xgrid[i,a] != '0'))
                 {
                     res.Add(Xgrid[i,a]);
                 }
@@ -37,7 +37,7 @@ namespace Sudoku_solver
 
             for(int a=0; a<Xgrid.GetLength(1); a++)
             {
-                if((Xgrid[a,j] != '0') && (!res.Contains(Xgrid[a,j])))
+                if((Xgrid[a,j] != '0') && (a != i))
                 {
                     res.Add(Xgrid[a,j]);
                 }
@@ -153,7 +153,7 @@ namespace Sudoku_solver
                 for(int l=0; l<regionWidth; l++)
                 {
 
-                    if((Xgrid[i+k, j+l] != '0') && (!res.Contains(Xgrid[i+k, j+l])))
+                    if((Xgrid[i+k, j+l] != '0'))
                     {
                         res.Add(Xgrid[i+k, j+l]);
                     }
@@ -209,35 +209,54 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
-        public static bool CheckIfSolved(char[,] Xgrid, int[] XregionTable, int i,int j)
+        public static bool CheckIfSolved(char[,] Xgrid, int[,] XregionTable)
         {
             bool res = true;
-
+            bool end = false;
             int times = 0;
-
-            for(int i=0;i<Xgrid.GetLength(0); i++)
+            
+            while(!end)
             {
-                for(int j=0;i<Xgrid.GetLength(1); j++)
+                for(int i=0; i<Xgrid.GetLength(0) && res; i++)
                 {
-                    foreach(val char in GetCrossNumbers(Xgrid, i,j))
+                    for(int j=0; j<Xgrid.GetLength(1) && res; j++)
                     {
-                        foreach(val2 char in GetRegionNumbers(Xgrid,GetRegionID(XregionTable,i,j)))
+                        if(Xgrid[i,j] == '0')
                         {
-                            if(val == val2)
+                            res = false;
+                        }
+
+                        else
+                        {
+                            foreach(char val in GetCrossNumbers(Xgrid,i,j))
                             {
-                                times++;
+                                if(val == Xgrid[i,j])
+                                {
+                                    times ++;
+                                }
                             }
-                        }                  
-                    }
 
-                    if(times > 2)
-                    {
-                        res = false;
-                    }
+                            foreach(char val in GetRegionNumbers(Xgrid,GetRegionID(XregionTable,i,j)))
+                            {
+                                if(val == Xgrid[i,j])
+                                {
+                                    times ++;
+                                }
+                            }
 
-                    times = 0;
+                            if(times > 2)
+                            {
+                                res = false;
+                            }
+
+                            times = 0;
+                        }
+                    }                
                 }
+                end = true;
             }
+
+            return res;
         }
 
         //---------------------------------------------------------------------------------------
@@ -297,17 +316,9 @@ namespace Sudoku_solver
                     }
                 }
 
-                isSolved = true;
-
-                for(int i=0;i<currentTry.GetLength(0) && isSolved;i++)
+                if(CheckIfSolved(currentTry,XregionTable))
                 {
-                    for(int j=0;j<currentTry.GetLength(1) && isSolved;j++)
-                    {
-                        if(currentTry[i,j]=='0')
-                        {
-                            isSolved = false;
-                        }
-                    }
+                    isSolved = true;
                 }
 
                 tries ++;
@@ -333,18 +344,22 @@ namespace Sudoku_solver
             }
         }
 
+        //---------------------------------------------------------------------------------------
+
         public static char[,] DumbBruteforceSolve(char[,] Xgrid, int[,] XregionTable)
         {
-            char[] possibilities = new char[Xgrid.GetLength(0)];
-            char[,] currentTry = new char[Xgrid.GetLength(0),Xgrid.GetLength(1)]
+            List<char> possibilities = new List<char>();
+            char[,] currentTry = new char[Xgrid.GetLength(0),Xgrid.GetLength(1)];
 
             bool isSolved = false;
 
+            int tries = 0;
+
             Random r = new Random();
 
-            for(int i=0; i<Xgrid.GetLength(0); i++)
+            for(int i=1; i<=Xgrid.GetLength(0); i++)
             {
-                possibilities[i] = char.Parse(i.ToString());
+                possibilities.Add(char.Parse(i.ToString()));
             }
 
             while(!isSolved)
@@ -355,18 +370,24 @@ namespace Sudoku_solver
                 {
                     for(int j=0; j<currentTry.GetLength(1); j++)
                     {
-                        currentTry[i,j] = possibilities[r.Next(possibilities.length)];
+                        if(currentTry[i,j] == '0')
+                        {
+                            currentTry[i,j] = possibilities[r.Next(possibilities.Count)];
+                        }
                     }
                 }
 
-                for(int i=0; i<currentTry.GetLength(0); i++)
+                if(CheckIfSolved(currentTry,XregionTable))
                 {
-                    for(int j=0; j<currentTry.GetLength(1);j++)
-                    {
-                        if(currentTry[i,j])
-                    }
+                    isSolved = true;
                 }
+
+                tries ++;
             }
+
+            Console.WriteLine("Number of tries : " + tries);
+
+            return currentTry;
         }
     }
 }
