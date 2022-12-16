@@ -16,9 +16,15 @@ class Main_program
 
         string path = SudokuAPI.AskFilePath();        
         char[,] grid = SudokuAPI.RetrieveGrid(path);
-        int[,] RegionTable=Sudoku.GenerateRegionTable(grid);
+        int[,] regionTable=Sudoku.GenerateRegionTable(grid);
 
-        Debug.ShowGrid(Sudoku.BruteforceSolve(grid, RegionTable));
+        Console.WriteLine("DumbBruteforceSolve :");
+        Debug.ShowGrid(Sudoku.DumbBruteforceSolve(grid, regionTable));
+
+        Console.ReadLine();
+
+        Console.WriteLine("BruteforceSolve :");
+        Debug.ShowGrid(Sudoku.BruteforceSolve(grid,regionTable));
 
         /*int i,j;
 
