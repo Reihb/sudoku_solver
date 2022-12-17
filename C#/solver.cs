@@ -208,8 +208,6 @@ namespace Sudoku_solver
 
             return res;
         }
-        
-        //---------------------------------------------------------------------------------------
 
         /*
             GetRegionNumbers : function : List<char>
@@ -293,10 +291,18 @@ namespace Sudoku_solver
         public static List<char> GetPossibilitiesUnion(char[,] Xgrid, List<char> Xlist1, List<char> Xlist2)
         {
             List<char> res = new List<char>();
+            List<char> over9 = new List<char>(){'A','B','C','D','E','F','G'};
 
             for(int i = 1; i<=Xgrid.GetLength(0); i++)
             {
-                res.Add(char.Parse(i.ToString()));
+                if(i <= 9)
+                {
+                    res.Add(char.Parse(i.ToString()));
+                }
+                else
+                {
+                    res.Add(over9[i-10]);
+                }
             }
 
             int length = Xgrid.GetLength(0);
