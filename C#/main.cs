@@ -14,12 +14,12 @@ class Main_program
     {
         Console.Title = "sudoku_solver";
 
+        //Declaration + initialization of the path the grid and the table of region
         string path = SudokuAPI.AskFilePath();        
         char[,] grid = SudokuAPI.RetrieveGrid(path);
         int[,] regionTable=Sudoku.GenerateRegionTable(grid);
 
         
-
         Console.WriteLine("BruteforceSolve :");
         Debug.ShowGrid(Sudoku.BruteforceSolve(grid,regionTable));
 
