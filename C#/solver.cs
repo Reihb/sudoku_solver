@@ -208,6 +208,8 @@ namespace Sudoku_solver
 
             return res;
         }
+        
+        //---------------------------------------------------------------------------------------
 
         /*
             GetRegionNumbers : function : List<char>
