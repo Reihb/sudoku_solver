@@ -67,6 +67,17 @@ namespace Sudoku_solver
             BlindBruteForceSolve : function : char[,]
                 Function that solves a sudoku grid by trying every possibility combination
                 Every tile is filled with a radom pick between all the possibilities
+            
+            parameters :
+                Xgrid : char[,] : sudoku grid
+                XregionTable : int[,] : region table
+            
+            local :
+                possibilities : List<char> : List of all the possibilities a tile can take
+                over 9 : List<char> : char to use if the size of the sudoku is over 9
+                currentTry : char[,] : copy of the sudoku grid (used for each try)
+                isSolved : bool : state of the sudoku
+                tries : int : number of tries
         */
         public static char[,] BlindBruteforceSolve(char[,] Xgrid, int[,] XregionTable)
         {
