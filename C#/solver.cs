@@ -188,6 +188,21 @@ namespace Sudoku_solver
 
         /*
             GetPossibilitiesFromPos : function : List<char>
+                Function that get all the possibilities that a tile can take based on its location
+            
+            parameters :
+                Xgrid : char[,] : sudoku grid
+                XregionTable : int[,] : region table
+                i : int : line of the tile
+                j : int : column of the tile
+
+            local :
+                cross : List<char> : List of all the numbers used in the cross
+                region : List<char> : List of all the numbers used in the region
+                res : List<char> : List of all the possibilities of char the tile can take
+
+            return : 
+                res : List<char> : List of all the possibilities of char the tile can take
         */
         public static List<char> GetPossibilitiesFromPos(char[,] Xgrid, int[,] XregionTable, int i, int j)
         {
