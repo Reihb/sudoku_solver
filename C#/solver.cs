@@ -186,6 +186,9 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
+        /*
+            GetPossibilitiesFromPos : function : List<char>
+        */
         public static List<char> GetPossibilitiesFromPos(char[,] Xgrid, int[,] XregionTable, int i, int j)
         {
             List<char> cross;
@@ -292,7 +295,7 @@ namespace Sudoku_solver
         //---------------------------------------------------------------------------------------
 
         /*
-            GetRegionID : function
+            GetRegionID : function : int
                 Function that returns the region ID of a particular sudoku tile
             
             parameters :
@@ -370,7 +373,7 @@ namespace Sudoku_solver
         //---------------------------------------------------------------------------------------
 
         /*
-            GenerateRegionTable : function
+            GenerateRegionTable : function : int[,]
                 Function that returns the region table for a given table
             
             parameters :
