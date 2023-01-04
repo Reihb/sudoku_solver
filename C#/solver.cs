@@ -139,6 +139,25 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
+        /*
+            CheckIfSolved : function : bool
+                Function that ckecks if a sudoku is correctly solved by checking if each number has been used
+                only once in the cross and the region
+
+            parameters :
+                Xgrid : char[,] : sudoku grid to verify
+                XregionTable : int[,] : region table
+
+            local :
+                res : bool : result of the verifications
+                times : int : times a particular as been used in the cross and the region
+                i : int : iterator of the "for each line" loop
+                j : int : iterator of the "for each column" loop
+                val : char : char in the given List
+
+            return :
+                res : bool : result of the verification
+        */
         public static bool CheckIfSolved(char[,] Xgrid, int[,] XregionTable)
         {
             bool res = true;
