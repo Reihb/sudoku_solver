@@ -131,6 +131,8 @@ namespace Sudoku_solver_API
 
             StreamReader sr = new StreamReader(fs);
 
+            StreamWriter sw = new StreamWriter(fs);
+
             line = sr.ReadLine();
 
             while((line != null) && (line != "        <!-- Begin -->"))
@@ -138,6 +140,7 @@ namespace Sudoku_solver_API
                 line = sr.ReadLine();
                 nb_line++;
             }
+            sw.WriteLine("test");
         }
     }
 }
