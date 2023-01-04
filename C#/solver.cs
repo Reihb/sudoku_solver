@@ -137,6 +137,8 @@ namespace Sudoku_solver
             return currentTry;
         }
 
+        //---------------------------------------------------------------------------------------
+
         public static bool CheckIfSolved(char[,] Xgrid, int[,] XregionTable)
         {
             bool res = true;
