@@ -111,6 +111,18 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
+        /*
+            UniquePartialSolve : function : char[,]
+                Function that partialy solve the sudoku by filling the tiles that have only one possibility
+            
+            parameters :
+                Xgrid : char[,] : sudoku grid
+                XregionTalbe : int[,] : region table
+            
+            local :
+                possibilities : List<char> : List of all the possibilities a tile can take
+                currentTry : char[,] : copy of the sudoku grid (used for each try)
+        */
         public static char[,] UniquePartialSolve(char[,] Xgrid, int[,] XregionTable)
         {
             Console.WriteLine("UnicPartialSolve : ")
