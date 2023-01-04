@@ -74,7 +74,7 @@ section {
     display: flex;
     flex-flow: row;
     flex-wrap: nowrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     margin-bottom: 2rem;
     padding-bottom: 2rem;
@@ -90,8 +90,8 @@ section {
 article{
     display: flex;
     flex-flow: column;
-    justify-content: center;
-    align-items: center;
+    width: 50%;
+    align-items:center;
 }
 
 article header{
@@ -136,7 +136,7 @@ footer{
         max-width: 100vw;
     }
     nav img{
-        max_width : 5%;
+        max-width : 5%;
     }
     li a{
         font-size: 3vw;
