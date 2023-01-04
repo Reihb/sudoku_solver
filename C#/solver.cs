@@ -9,6 +9,8 @@ namespace Sudoku_solver
     {
         public static char[,] BruteforceSolve(char[,] Xgrid, int[,] XregionTable){
 
+            Console.WriteLine("BruteforceSolve :");
+
             List<char> possibilities= new List<char>();
 
             char[,] currentTry= new char[Xgrid.GetLength(0),Xgrid.GetLength(1)];
@@ -63,6 +65,8 @@ namespace Sudoku_solver
 
         public static char[,] DumbBruteforceSolve(char[,] Xgrid, int[,] XregionTable)
         {
+            Console.WriteLine("DumbBruteforceSolve :");
+
             List<char> possibilities = new List<char>();
             char[,] currentTry = new char[Xgrid.GetLength(0),Xgrid.GetLength(1)];
 
@@ -109,6 +113,7 @@ namespace Sudoku_solver
 
         public static char[,] UnicPartialSolve(char[,] Xgrid, int[,] XregionTable)
         {
+            Console.WriteLine("UnicPartialSolve : ")
             List<char> possibilities = new List<char>();
             char[,] currentTry = new char[Xgrid.GetLength(0),Xgrid.GetLength(1)];
 
