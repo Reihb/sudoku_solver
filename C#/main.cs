@@ -19,16 +19,16 @@ class Main_program
         char[,] grid = SudokuAPI.RetrieveGrid(path);
         int[,] regionTable=Sudoku.GenerateRegionTable(grid);
 
+        Debug.ShowGrid(Sudoku.UniquePartialSolve(grid,regionTable));
+
+        Console.ReadLine();
         
-        Console.WriteLine("BruteforceSolve :");
         Debug.ShowGrid(Sudoku.BruteforceSolve(grid,regionTable));
 
         Console.ReadLine();
-
-        Console.WriteLine("DumbBruteforceSolve :");
+        
         Debug.ShowGrid(Sudoku.DumbBruteforceSolve(grid, regionTable));
 
-        
 
         /*int i,j;
 

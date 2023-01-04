@@ -111,7 +111,7 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
-        public static char[,] UnicPartialSolve(char[,] Xgrid, int[,] XregionTable)
+        public static char[,] UniquePartialSolve(char[,] Xgrid, int[,] XregionTable)
         {
             Console.WriteLine("UnicPartialSolve : ")
             List<char> possibilities = new List<char>();
@@ -291,6 +291,21 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
+        /*
+            GetRegionID : function
+                Function that returns the region ID of a particular sudoku tile
+            
+            parameters :
+                XregionTable : int[,] : region table
+                i : int : line of the tile
+                j : column of the tile
+
+            local :
+                res : int : region ID
+
+            return :
+                res : int : region ID
+        */
         public static int GetRegionID(int[,] XregionTable, int i, int j)
         {
             int res;
@@ -355,7 +370,24 @@ namespace Sudoku_solver
         //---------------------------------------------------------------------------------------
 
         /*
+            GenerateRegionTable : function
+                Function that returns the region table for a given table
+            
+            parameters :
+                Xgrid : char[,] : the source grid
 
+            local :
+                res : int[,] : region table
+                regionWidth : int : Width of the regions
+                regionHeight : int : Height of the regions
+                regionID : int : unique ID of the region
+                i : int : iterator of the "for each line of region"
+                j : int : iterator of the "for each column of region"
+                k : int : iterator of the for each line of the region"
+                l : int : iterator of the "for each column of the region"
+
+            return :
+                res : int[,] : region table
         */
         public static int[,] GenerateRegionTable(char[,] Xgrid)
         {
@@ -424,7 +456,6 @@ namespace Sudoku_solver
                 i : int : iterator of the first for loop
                 j : int : iterator of the second for loop
         */
-
         public static void Copy2DTableChar(char[,] Xtab, char[,] Xtab2)
         {
             int i,j;
