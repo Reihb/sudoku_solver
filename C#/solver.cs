@@ -63,22 +63,34 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
-        public static char[,] DumbBruteforceSolve(char[,] Xgrid, int[,] XregionTable)
+        /*
+            BlindBruteForceSolve : function : char[,]
+                Function that solves a sudoku grid by trying every possibility combination
+                Every tile is filled with a radom pick between all the possibilities
+        */
+        public static char[,] BlindBruteforceSolve(char[,] Xgrid, int[,] XregionTable)
         {
-            Console.WriteLine("DumbBruteforceSolve :");
+            Console.WriteLine("BlindBruteforceSolve :");
 
             List<char> possibilities = new List<char>();
+            List<char> over9 = new List<char>(){'A','B','C','D','E','F','G'};
+
             char[,] currentTry = new char[Xgrid.GetLength(0),Xgrid.GetLength(1)];
-
             bool isSolved = false;
-
             int tries = 0;
 
             Random r = new Random();
 
-            for(int i=1; i<=Xgrid.GetLength(0); i++)
+            for(int i = 1; i<=Xgrid.GetLength(0); i++)
             {
-                possibilities.Add(char.Parse(i.ToString()));
+                if(i <= 9)
+                {
+                    possibilities.Add(char.Parse(i.ToString()));
+                }
+                else
+                {
+                    possibilities.Add(over9[i-10]);
+                }
             }
 
             while(!isSolved)
@@ -122,6 +134,11 @@ namespace Sudoku_solver
             local :
                 possibilities : List<char> : List of all the possibilities a tile can take
                 currentTry : char[,] : copy of the sudoku grid (used for each try)
+                i : int : iterator of the "for each line of the grid" loop
+                j : int : iterator of the "for each column of the grid" loop
+
+            return :
+                currentTry : char[,] : completed sudoku grid
         */
         public static char[,] UniquePartialSolve(char[,] Xgrid, int[,] XregionTable)
         {
