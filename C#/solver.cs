@@ -109,7 +109,27 @@ namespace Sudoku_solver
 
         public static char[,] UnicPartialSolve(char[,] Xgrid, int[,] XregionTable)
         {
-            
+            List<char> possibilities = new List<char>();
+            char[,] currentTry = new char[Xgrid.GetLength(0),Xgrid.GetLength(1)];
+
+            Copy2DTableChar(Xgrid,currentTry);
+
+            for(int i=0; i<currentTry.GetLength(0); i++)
+            {
+                for(int j=0; j<currentTry.GetLength(1); j++)
+                {
+                    if(currentTry[i,j] == '0')
+                    {
+                        possibilities = GetPossibilitiesFromPos(currentTry,XregionTable,i,j);
+                        if(possibilities.Count == 1)
+                        {
+                            currentTry[i,j] = possibilities[0];
+                        }
+                    }
+                }
+            }
+
+            return currentTry;
         }
 
         public static bool CheckIfSolved(char[,] Xgrid, int[,] XregionTable)
