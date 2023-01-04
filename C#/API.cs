@@ -91,59 +91,74 @@ namespace Sudoku_solver_API
             return res;
         }
 
-        public static string GridToHTML(char[,] Xgrid)
+        public static List<string> GridToHTML(char[,] Xgrid)
         {
-            string temp ="";
+            List<string> temp = new List<string>();
 
-            temp += "            <table>";
+            temp.Add("            <table>");
 
             for(int i=0; i<Xgrid.GetLength(0); i++)
             {
-                temp += "\n                <tr>";
+                temp.Add("                <tr>");
 
                 for(int j=0; j<Xgrid.GetLength(1); j++)
                 {
                     if(Xgrid[i,j] != '0')
                     {
-                        temp += "\n                        <td>" + Xgrid[i,j].ToString() + "</td>";
+                        temp.Add("                        <td>" + Xgrid[i,j].ToString() + "</td>");
                     }
                     else
                     {
-                        temp += "\n                        <td> "+"</td>";
+                        temp.Add("                        <td> "+"</td>");
                     }
                 }
 
-                temp += "\n                </tr>";
+                temp.Add("                </tr>");
             }
 
-            temp += "\n            </table>";
+            temp.Add("            </table>");
 
             return temp;
         }
 
         public static void InsertGridsHTML(char[,] Xgrid, char[,] Xgrid2)
         {
-            string line;
+            int i;
             const string PATH = "../index.html";
-            List<string> content = new List<string>();
+            string[] content = File.ReadAllLines(PATH);
+            List<string> gridHTML = GridToHTML(Xgrid);
+            List<string> grid2HTML = GridToHTML(Xgrid2);
 
-            FileStream fs = new FileStream(PATH, FileMode.Open, FileAccess.ReadWrite);
-
-            StreamReader sr = new StreamReader(fs);
-
-            StreamWriter sw = new StreamWriter(fs);
-
-            line = sr.ReadLine();
-
-            while((line != null))
-            {
-                content.Add(line);
-                line = sr.ReadLine();
-            }
-
-            for(int i=0; i<content.Count ; i++)
+            for(i=0; i<content.Length; i++)
             {
                 Console.WriteLine(content[i]);
+            }
+
+            File.WriteAllText(PATH,"");
+
+            for(i=0; i<content.Length;i++)
+            {
+                File.AppendAllText(PATH,content[i]);
+
+                File.AppendAllText(PATH,"\n");
+
+                if(content[i] == "        <p>Grilles ICI</p>")
+                {
+                    File.AppendAllText(PATH,"        <div class=\"tableaux\">\n");
+
+                    for(int j=0; j<gridHTML.Count;j++)
+                    {
+                        File.AppendAllText(PATH,gridHTML[j]);
+                        File.AppendAllText(PATH,"\n");
+                    }
+                    for(int k=0; k<grid2HTML.Count;k++)
+                    {
+                        File.AppendAllText(PATH,grid2HTML[k]);
+                        File.AppendAllText(PATH,"\n");
+                    }
+
+                    File.AppendAllText(PATH,"        </div>\n");
+                }
             }
         }
     }
