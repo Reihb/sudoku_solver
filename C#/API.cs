@@ -142,7 +142,7 @@ namespace Sudoku_solver_API
 
                 File.AppendAllText(PATH,"\n");
 
-                if(content[i] == "        <p>Grilles ICI</p>")
+                if(content[i] == "        <!--Généré automatiquement-->")
                 {
                     File.AppendAllText(PATH,"        <div class=\"tableaux\">\n");
 
