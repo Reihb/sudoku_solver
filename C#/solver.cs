@@ -107,6 +107,11 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
+        public static char[,] UnicPartialSolve(char[,] Xgrid, int[,] XregionTable)
+        {
+            
+        }
+
         public static bool CheckIfSolved(char[,] Xgrid, int[,] XregionTable)
         {
             bool res = true;
