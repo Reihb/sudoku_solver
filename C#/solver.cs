@@ -412,6 +412,19 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
+        /*
+            Copy2DTableChar : procedure
+                Procedure that initialize a char table by copying all the values from the first one.
+            
+            parameters :
+                Xtab : char[,] : the table to copy
+                Xtab2 : char[,] : the teable to put the values into
+
+            local :
+                i : int : iterator of the first for loop
+                j : int : iterator of the second for loop
+        */
+
         public static void Copy2DTableChar(char[,] Xtab, char[,] Xtab2)
         {
             int i,j;
