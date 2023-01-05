@@ -126,6 +126,9 @@ figure.github img{
 }
 
 footer{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
     height: 5rem;
 }
 
