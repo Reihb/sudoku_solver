@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using Sudoku_solver_Debug;
+using Sudoku_solver_API;
 
 namespace Sudoku_solver
 {
@@ -82,6 +83,8 @@ namespace Sudoku_solver
 
             Console.WriteLine("Number of tries : " + tries);
 
+            SudokuAPI.InsertGridsHTML(Xgrid, currentTry);
+
             return currentTry;
         }
 
@@ -160,6 +163,8 @@ namespace Sudoku_solver
             }
 
             Console.WriteLine("Number of tries : " + tries);
+
+            SudokuAPI.InsertGridsHTML(Xgrid, currentTry);
 
             return currentTry;
         }

@@ -61,6 +61,20 @@ namespace Sudoku_solver_Debug
                 Console.WriteLine();
             }
         }
+
+        //---------------------------------------------------------------------------------------
+
+        /*
+            ShowGridInt : procedure
+                Procedure that displays a grid of integers in the console
+
+            parameters :
+                Xgrid : int[,] : grid of int
+
+            local : 
+                i : int : global iterator
+                j : int : global iterator
+        */
         public static void ShowGridInt(int[,] Xgrid)
         {
             Console.WriteLine("\nSudoku grid :");

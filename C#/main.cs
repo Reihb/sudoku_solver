@@ -19,33 +19,15 @@ class Main_program
         char[,] grid = SudokuAPI.RetrieveGrid(path);
         int[,] regionTable=Sudoku.GenerateRegionTable(grid);
 
+        while(input != 4)
+        {
+            //Choix de la résolution
+        }
+
         Debug.ShowGrid(Sudoku.UniquePartialSolve(grid,regionTable));
 
-        Console.ReadLine();
-        
-        Debug.ShowGrid(Sudoku.BruteforceSolve(grid,regionTable));
-
-        Console.ReadLine();
         
         Debug.ShowGrid(Sudoku.DumbBruteforceSolve(grid, regionTable));
-
-
-        /*int i,j;
-
-        i=0;
-
-        Debug.ShowGrid(grid);
-
-        while(i != 10)
-        {
-            Console.WriteLine("Entrez i puis j");
-            i = int.Parse(Console.ReadLine());
-            j = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Liste des possibilités : ");
-            Debug.ShowListChar(Sudoku.GetPossibilitiesFromPos(grid, RegionTable, i, j));
-            Console.WriteLine();
-        }*/
 
         Console.ReadLine();
     }
