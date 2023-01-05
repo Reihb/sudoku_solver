@@ -190,7 +190,7 @@ namespace Sudoku_solver
         */
         public static char[,] UniquePartialSolve(char[,] Xgrid, int[,] XregionTable)
         {
-            Console.WriteLine("UnicPartialSolve : ")
+            Console.WriteLine("UnicPartialSolve : ");
             List<char> possibilities = new List<char>();
             char[,] currentTry = new char[Xgrid.GetLength(0),Xgrid.GetLength(1)];
 
