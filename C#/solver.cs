@@ -7,6 +7,16 @@ namespace Sudoku_solver
 {
     class Sudoku
     {
+        /*
+            BruteforceSolve : function : char[,]
+                Function that solves a sudoku grid by trying every possibility combination
+                Every tile is filled with a radom pick between all the possibilities
+                The possibilities are calculated by a sub-program
+                
+            parameters :
+                Xgrid : char[,] : sudoku grid
+                XregionTable : int[,] : region table
+        */
         public static char[,] BruteforceSolve(char[,] Xgrid, int[,] XregionTable){
 
             Console.WriteLine("BruteforceSolve :");
@@ -67,6 +77,8 @@ namespace Sudoku_solver
             BlindBruteForceSolve : function : char[,]
                 Function that solves a sudoku grid by trying every possibility combination
                 Every tile is filled with a radom pick between all the possibilities
+                The possibilities are just all the caracters available
+                The function doesn't know what caracters can or cannot be put in the tile (blind)
             
             parameters :
                 Xgrid : char[,] : sudoku grid
@@ -78,6 +90,12 @@ namespace Sudoku_solver
                 currentTry : char[,] : copy of the sudoku grid (used for each try)
                 isSolved : bool : state of the sudoku
                 tries : int : number of tries
+                v : int : iterator of the possibilities creation loop
+                i : int : iterator of the "for each line of the grid" loop
+                j : int : iterator of the "for each column of the grid" loop
+
+            return :
+                currentTry : char[,] : copy of the sudoku grid (used for each try)
         */
         public static char[,] BlindBruteforceSolve(char[,] Xgrid, int[,] XregionTable)
         {
@@ -92,15 +110,15 @@ namespace Sudoku_solver
 
             Random r = new Random();
 
-            for(int i = 1; i<=Xgrid.GetLength(0); i++)
+            for(int v = 1; v<=Xgrid.GetLength(0); v++)
             {
-                if(i <= 9)
+                if(v <= 9)
                 {
-                    possibilities.Add(char.Parse(i.ToString()));
+                    possibilities.Add(char.Parse(v.ToString()));
                 }
                 else
                 {
-                    possibilities.Add(over9[i-10]);
+                    possibilities.Add(over9[v-10]);
                 }
             }
 

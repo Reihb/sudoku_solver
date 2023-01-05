@@ -138,9 +138,7 @@ namespace Sudoku_solver_API
 
             for(i=0; i<content.Length;i++)
             {
-                File.AppendAllText(PATH,content[i]);
-
-                File.AppendAllText(PATH,"\n");
+                File.AppendAllText(PATH,content[i] + "\n");
 
                 if(content[i] == "        <!--Généré automatiquement-->")
                 {
@@ -148,13 +146,11 @@ namespace Sudoku_solver_API
 
                     for(int j=0; j<gridHTML.Count;j++)
                     {
-                        File.AppendAllText(PATH,gridHTML[j]);
-                        File.AppendAllText(PATH,"\n");
+                        File.AppendAllText(PATH,gridHTML[j] + "\n");
                     }
                     for(int k=0; k<grid2HTML.Count;k++)
                     {
-                        File.AppendAllText(PATH,grid2HTML[k]);
-                        File.AppendAllText(PATH,"\n");
+                        File.AppendAllText(PATH,grid2HTML[k] + "\n");
                     }
 
                     File.AppendAllText(PATH,"        </div>\n");
