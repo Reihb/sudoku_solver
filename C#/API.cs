@@ -160,21 +160,39 @@ namespace Sudoku_solver_API
 
             local : 
                 i : int : general iterator
+                j : int : general iterator
+                c : int : general iterator
                 k : int : general iterator
                 PATH : const string : path of the HTML page
                 content : string[] : all lines of the HTML page
                 gridHTML : List<string> : lines of the 1st grid in HTML
                 grid2HTML : List<string> : lines if the 2nd grid in HTML
+                gridPathWords : List<string> : words of the given path
         */
-        public static void InsertGridsHTML(char[,] Xgrid, char[,] Xgrid2)
+        public static void InsertGridsHTML(char[,] Xgrid, char[,] Xgrid2, string XgridPath)
         {
             int i;
+            string word = "";
             const string PATH = "../index.html";
             string[] content = File.ReadAllLines(PATH);
             List<string> gridHTML = GridToHTML(Xgrid);
             List<string> grid2HTML = GridToHTML(Xgrid2);
+            List<string> gridPathWords = new List<string>();
 
             File.WriteAllText(PATH,"");
+
+            for(int c = 0; c<XgridPath.Length; c++)
+            {
+                if(XgridPath[c] != "/")
+                {
+                    word += XgridPath[c];
+                }
+                else
+                {
+                    gridPathWords.Add(word);
+                    word = ""
+                }
+            }
 
             for(i=0; i<content.Length;i++)
             {
@@ -189,7 +207,7 @@ namespace Sudoku_solver_API
                         File.AppendAllText(PATH,gridHTML[j] + "\n");
                     }
 
-                    File.AppendAllText(PATH,"            <p>Difficulté : " + "??" + "<br>Taille : "
+                    File.AppendAllText(PATH,"            <p>Difficulté : " + gridPathWords[0] + "<br>Taille : "
                     + Xgrid.GetLength(0) + "x" + Xgrid.GetLength(0) + "</p>");
 
                     for(int k=0; k<grid2HTML.Count;k++)
