@@ -174,11 +174,6 @@ namespace Sudoku_solver_API
             List<string> gridHTML = GridToHTML(Xgrid);
             List<string> grid2HTML = GridToHTML(Xgrid2);
 
-            for(i=0; i<content.Length; i++)
-            {
-                Console.WriteLine(content[i]);
-            }
-
             File.WriteAllText(PATH,"");
 
             for(i=0; i<content.Length;i++)
