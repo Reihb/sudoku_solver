@@ -12,10 +12,24 @@ namespace Sudoku_solver
                 Function that solves a sudoku grid by trying every possibility combination
                 Every tile is filled with a radom pick between all the possibilities
                 The possibilities are calculated by a sub-program
-                
+
             parameters :
                 Xgrid : char[,] : sudoku grid
                 XregionTable : int[,] : region table
+
+            local :
+                possibilities : List<char> : list of all the possibilities a tile can take
+                currentTry : char[,] : copy of the sudoku table
+                isSolvable : bool : if the sudoku isn't solvable anymore, retry
+                isSolved : bool : if the sudoku isn't solved, retry
+                tries : int : number of tries
+                r : Random : random number
+                i : int : iterator of the "for each line of the grid" loop
+                j : int : iterator of the "for each column of the grid" loop
+
+            return :
+                currentTry : char[,] : solved sudoku
+
         */
         public static char[,] BruteforceSolve(char[,] Xgrid, int[,] XregionTable){
 

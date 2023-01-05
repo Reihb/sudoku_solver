@@ -7,15 +7,15 @@ namespace Sudoku_solver_API
     class SudokuAPI
     {
         /*
-        AskFilePath : procedure : string
-            procedure that asks the user for a file's path until the given path is correct
+            AskFilePath : procedure : string
+                procedure that asks the user for a file's path until the given path is correct
 
-        local :
-            exit : boolean : condition of the while loop
-            directory : string : path of the file entered by the user
+            local :
+                exit : boolean : condition of the while loop
+                directory : string : path of the file entered by the user
 
-        return :
-            path : string : path of the file entered by the user
+            return :
+                path : string : path of the file entered by the user
         */
         public static string AskFilePath()
         {
@@ -63,11 +63,20 @@ namespace Sudoku_solver_API
         //---------------------------------------------------------------------------------------
 
         /*
-        RetrieveGrid : procedure : char[,]
-            procedure that retrieves a sudoku grid from a txt file
+            RetrieveGrid : procedure : char[,]
+                procedure that retrieves a sudoku grid from a txt file
 
-        parameters :
-            Xpath : string : path of the txt file
+            parameters :
+                Xpath : string : path of the txt file
+            
+            local :
+                l : int : line number
+                temp : string[] : lines of the txt file
+                res : char[,] : sudoku grid
+                c : int : iterator of the "for each caracter" loop
+            
+            return :
+                res : char[,] : sudoku grid
         */
         public static char[,] RetrieveGrid(string Xpath)
         {
@@ -91,6 +100,11 @@ namespace Sudoku_solver_API
             return res;
         }
 
+        //---------------------------------------------------------------------------------------
+
+        /*
+            
+        */
         public static List<string> GridToHTML(char[,] Xgrid)
         {
             List<string> temp = new List<string>();
