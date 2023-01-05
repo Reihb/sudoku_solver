@@ -4,6 +4,8 @@
 
 Sudoku solver is a program written in C that can solve completely and partially a given sudoku grid up to 16x16 tiles.
 
+To use the program, compile it/run the exe, and enter the files path to the sudoku grid
+
 <hr>
 
 The program is divided in several classes :
