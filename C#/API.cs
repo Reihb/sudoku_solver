@@ -103,7 +103,19 @@ namespace Sudoku_solver_API
         //---------------------------------------------------------------------------------------
 
         /*
+            GridToHTML : function : List<string>
+                Function that converts a sudoku grid into a HTML list of strings
+
+            parameters : 
+                Xgrid : sudoku grid
             
+            local : 
+                temp : List<string> : list that contains all the lines of the grid in HTML
+                i : int : iterator of the "for each line of the grid" loop
+                j : int : iterator of the "for each column of the grid" loop
+
+            return :
+                temp : List<string> : list of the grid in HTML lines
         */
         public static List<string> GridToHTML(char[,] Xgrid)
         {
@@ -135,6 +147,11 @@ namespace Sudoku_solver_API
             return temp;
         }
 
+        //---------------------------------------------------------------------------------------
+
+        /*
+            InsertGridsHTML
+        */
         public static void InsertGridsHTML(char[,] Xgrid, char[,] Xgrid2)
         {
             int i;
@@ -162,6 +179,10 @@ namespace Sudoku_solver_API
                     {
                         File.AppendAllText(PATH,gridHTML[j] + "\n");
                     }
+
+                    File.AppendAllText(PATH,"            <p>Difficulté : " + "??" + "<br>Taille : "
+                    + Xgrid.GetLength(0) + "x" + Xgrid.GetLength(0) + "</p>");
+
                     for(int k=0; k<grid2HTML.Count;k++)
                     {
                         File.AppendAllText(PATH,grid2HTML[k] + "\n");
