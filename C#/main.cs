@@ -21,7 +21,12 @@ class Main_program
         int choice;
 
         Console.WriteLine("What solving method do you want to use ?");
-        Console.WriteLine("-1 Blind Bruteforce\n-2 Possibilities aware Bruteforce\n-3 Partial resolution with unique possibilities\n");
+
+        Console.WriteLine("-1 Blind Bruteforce\n
+        -2 Possibilities aware Bruteforce\n
+        -3 Possibilities aware + Partail resolution Bruteforce\n
+        -4 Partial resolution with unique possibilities\n");
+
         choice = int.Parse(Console.ReadLine());
 
         if(choice == 1)
@@ -32,6 +37,11 @@ class Main_program
         else if(choice == 2)
         {
             Debug.ShowGrid(Sudoku.BruteforceSolve(grid, regionTable));
+            Console.WriteLine("The results have been added to the HTML page");
+        }
+        else if(choice == 3)
+        {
+            Debug.ShowGrid(Sudoku.PartialAndBruteforceSolve(grid, regionTable));
             Console.WriteLine("The results have been added to the HTML page");
         }
         else
