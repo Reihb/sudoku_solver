@@ -1,29 +1,9 @@
 **Compilation command : mcs -out:main.exe main.cs API.cs debug.cs solver.cs**
 
-## Sudoku_solver_API (API.cs) :
+##Sudoku solver
 
-### SudokuAPI class :
+Sudoku solver is a program written in C that can solve completely and partially a given sudoku grid up to 16x16 tiles.
 
-* string AskFilePath()
+The program is divided in several classes :
 
-* char[,] RetrieveGrid(string Xpath)
-
-## Sudoku_solver (solver.cs) :
-
-### Sudoku class :
-
-* List< char > GetCrossNumbers(char[,] Xgrid, int i, int j)
-
-* void SetRegionWH(char[,] Xgrid, out int regionWidth, out int regionHeight)
-
-* List< char > GetRegionNumbers(char[,] Xgrid, int XregionID)
-
-* GetPossibilitiesFromList(char[,] Xgrid, List< char > Xlist1, List< char > Xlist2)
-
-## Sudoku_solver_debug (debug.cs) :
-
-## Debug class :
-
-* void ShowListChar(List< char > Xlist)
-
-* void ShowGrid(char[,] Xgrid)
+*Main_program : the main program
