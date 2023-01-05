@@ -39,8 +39,6 @@ class Main_program
             Debug.ShowGrid(Sudoku.UniquePartialSolve(grid,regionTable));
         }
 
-        
-
         Console.ReadLine();
     }
 }
