@@ -18,16 +18,28 @@ class Main_program
         string path = SudokuAPI.AskFilePath();        
         char[,] grid = SudokuAPI.RetrieveGrid(path);
         int[,] regionTable=Sudoku.GenerateRegionTable(grid);
+        int choice;
 
-        while(input != 4)
+        Console.WriteLine("What solving method do you want to use ?");
+        Console.WriteLine("-1 Blind Bruteforce\n-2 Possibilities aware Bruteforce\n-3 Partial resolution with unique possibilities\n");
+        choice = int.Parse(Console.ReadLine());
+
+        if(choice == 1)
         {
-            //Choix de la résolution
+            Debug.ShowGrid(Sudoku.BlindBruteForceSolve(grid, regionTable));
+            Console.WriteLine("The results have been added to the HTML page");
+        }
+        else if(choice == 2)
+        {
+            Debug.ShowGrid(Sudoku.BruteforceSolve(grid, regionTable));
+            Console.WriteLine("The results have been added to the HTML page");
+        }
+        else
+        {
+            Debug.ShowGrid(Sudoku.UniquePartialSolve(grid,regionTable));
         }
 
-        Debug.ShowGrid(Sudoku.UniquePartialSolve(grid,regionTable));
-
         
-        Debug.ShowGrid(Sudoku.DumbBruteforceSolve(grid, regionTable));
 
         Console.ReadLine();
     }
