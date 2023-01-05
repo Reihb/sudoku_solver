@@ -34,6 +34,8 @@ namespace Sudoku_solver
         */
         public static char[,] BruteforceSolve(char[,] Xgrid, int[,] XregionTable){
 
+            Console.Clear();
+
             Console.WriteLine("BruteforceSolve :");
 
             List<char> possibilities= new List<char>();
@@ -116,6 +118,8 @@ namespace Sudoku_solver
         */
         public static char[,] BlindBruteforceSolve(char[,] Xgrid, int[,] XregionTable)
         {
+            Console.Clear();
+
             Console.WriteLine("BlindBruteforceSolve :");
 
             List<char> possibilities = new List<char>();
@@ -190,7 +194,10 @@ namespace Sudoku_solver
         */
         public static char[,] UniquePartialSolve(char[,] Xgrid, int[,] XregionTable)
         {
+            Console.Clear();
+
             Console.WriteLine("UnicPartialSolve : ");
+            
             List<char> possibilities = new List<char>();
             char[,] currentTry = new char[Xgrid.GetLength(0),Xgrid.GetLength(1)];
 
