@@ -150,7 +150,21 @@ namespace Sudoku_solver_API
         //---------------------------------------------------------------------------------------
 
         /*
-            InsertGridsHTML
+            InsertGridsHTML : procedure
+                Procedure that insert the given grids into the HTML page
+                The procedure doesn't really "insert" but rewrites all the html file
+            
+            parameters :
+                Xgrid : char[,] : 1st sudoku grid
+                Xgrid2 : char[,] : 2nd sudoku grid
+
+            local : 
+                i : int : general iterator
+                k : int : general iterator
+                PATH : const string : path of the HTML page
+                content : string[] : all lines of the HTML page
+                gridHTML : List<string> : lines of the 1st grid in HTML
+                grid2HTML : List<string> : lines if the 2nd grid in HTML
         */
         public static void InsertGridsHTML(char[,] Xgrid, char[,] Xgrid2)
         {
