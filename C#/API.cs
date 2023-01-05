@@ -183,7 +183,7 @@ namespace Sudoku_solver_API
 
             for(int c = 0; c<XgridPath.Length; c++)
             {
-                if((XgridPath[c] != '/') && (XgridPath != '\\'))
+                if((XgridPath[c] != '/') && (XgridPath[c] != '\\'))
                 {
                     word += XgridPath[c];
                 }
