@@ -86,8 +86,6 @@ namespace Sudoku_solver
 
             Console.WriteLine("Number of tries : " + tries);
 
-            SudokuAPI.InsertGridsHTML(Xgrid, currentTry);
-
             return currentTry;
         }
 
@@ -166,10 +164,6 @@ namespace Sudoku_solver
 
                 tries ++;
             }
-
-            Console.WriteLine("Number of tries : " + tries);
-
-            SudokuAPI.InsertGridsHTML(Xgrid, currentTry);
 
             return currentTry;
         }

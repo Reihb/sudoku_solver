@@ -17,6 +17,7 @@ class Main_program
         //Declaration + initialization of the path the grid and the table of region
         string path = SudokuAPI.AskFilePath();        
         char[,] grid = SudokuAPI.RetrieveGrid(path);
+        char[,] solvedGrid;
         int[,] regionTable=Sudoku.GenerateRegionTable(grid);
         int choice;
 
@@ -28,23 +29,26 @@ class Main_program
 
         if(choice == 1)
         {
-            Debug.ShowGrid(Sudoku.BlindBruteforceSolve(grid, regionTable));
-            Console.WriteLine("The results have been added to the HTML page");
+            solvedGrid = Sudoku.BlindBruteforceSolve(grid, regionTable);
         }
         else if(choice == 2)
         {
-            Debug.ShowGrid(Sudoku.BruteforceSolve(grid, regionTable));
-            Console.WriteLine("The results have been added to the HTML page");
+            solvedGrid = Sudoku.BruteforceSolve(grid, regionTable)
         }
         else if(choice == 3)
         {
-            Debug.ShowGrid(Sudoku.PartialAndBruteforceSolve(grid, regionTable));
-            Console.WriteLine("The results have been added to the HTML page");
+            solvedGrid = Sudoku.PartialAndBruteforceSolve(grid, regionTable);
         }
         else
         {
-            Debug.ShowGrid(Sudoku.UniquePartialSolve(grid,regionTable));
+            solvedGrid = Sudoku.UniquePartialSolve(grid,regionTable);
         }
+
+        Debug.ShowGrid();
+
+        SudokuAPI.InsertGridsHTML(grid, solvedGrid, path);
+
+        Console.WriteLine("The results have been added to the HTML page");
 
         Console.ReadLine();
     }
