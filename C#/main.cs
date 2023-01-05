@@ -26,7 +26,7 @@ class Main_program
 
         if(choice == 1)
         {
-            Debug.ShowGrid(Sudoku.BlindBruteForceSolve(grid, regionTable));
+            Debug.ShowGrid(Sudoku.BlindBruteforceSolve(grid, regionTable));
             Console.WriteLine("The results have been added to the HTML page");
         }
         else if(choice == 2)
