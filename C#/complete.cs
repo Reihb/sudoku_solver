@@ -218,6 +218,19 @@ class Main_program
         //---------------------------------------------------------------------------------------
 
         /*
+            PartialAndBruteforceSolve : function : char[,]
+                Function that first fill the tile with just one possibility and the bruteforce the sudoku
+
+            parameters :
+                Xgrid : char[,] ; sudoku grid
+                XregionTable : int[,] : region table
+
+            local :
+                partiySolved : char[,] : partialy solved sudoku
+                res : char[,] : result of the bruteforce
+
+            return : 
+                res : char[,] : result of the bruteforce and partial solving
         */
 
         public static char[,] PartialAndBruteforceSolve(char[,] Xgrid, int[,] XregionTable)
