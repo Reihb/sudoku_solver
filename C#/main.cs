@@ -44,7 +44,7 @@ class Main_program
             solvedGrid = Sudoku.UniquePartialSolve(grid,regionTable);
         }
 
-        Debug.ShowGrid();
+        Debug.ShowGrid(solvedGrid);
 
         SudokuAPI.InsertGridsHTML(grid, solvedGrid, path);
 
