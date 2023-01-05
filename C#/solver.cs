@@ -179,63 +179,16 @@ namespace Sudoku_solver
         /*
         */
 
-        public static char[,] PartiafAndBruteforceSolve(char[,] Xgrid, int[,] XregionTable)
+        public static char[,] PartialAndBruteforceSolve(char[,] Xgrid, int[,] XregionTable)
         {
 
             Console.Clear();
 
-            Console.WriteLine("BruteforceSolve :");
+            Console.WriteLine("PartialAndBruteforceSolve :");
 
-            List<char> possibilities= new List<char>();
+            char[,] partialySolved = UniquePartialSolve(Xgrid,XregionTable);
 
-            char[,] currentTry= new char[Xgrid.GetLength(0),Xgrid.GetLength(1)];
-
-            bool isSolvable = false;
-            bool isSolved = false;
-
-            int tries=0;
-
-            Random r=new Random();
-            
-            while(!isSolved)
-            {
-                Copy2DTableChar(Xgrid,currentTry);
-
-                isSolvable = true;
-
-                for(int i=0;i<currentTry.GetLength(0) && isSolvable; i++)
-                {
-                    for(int j=0;j<currentTry.GetLength(1) && isSolvable; j++)
-                    {
-                        if(currentTry[i,j] == '0')
-                        {
-                            possibilities = GetPossibilitiesFromPos(currentTry,XregionTable,i,j);
-
-                            if(possibilities.Count == 0)
-                            {
-                                isSolvable = false;
-                            }
-                            else
-                            {
-                                currentTry[i,j]=possibilities[r.Next(possibilities.Count)];
-                            }
-                        }
-                    }
-                }
-
-                if(CheckIfSolved(currentTry,XregionTable))
-                {
-                    isSolved = true;
-                }
-
-                tries ++;
-            }
-
-            Console.WriteLine("Number of tries : " + tries);
-
-            SudokuAPI.InsertGridsHTML(Xgrid, currentTry);
-
-            return currentTry;
+            return BruteforceSolve(partialySolved, XregionTable);
         }
 
         //---------------------------------------------------------------------------------------
