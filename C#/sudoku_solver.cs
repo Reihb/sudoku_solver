@@ -229,7 +229,7 @@ class Main_program
             Console.Clear();
 
             Console.WriteLine("UnicPartialSolve : ");
-            
+
             List<char> possibilities = new List<char>();
             char[,] currentTry = new char[Xgrid.GetLength(0),Xgrid.GetLength(1)];
 
