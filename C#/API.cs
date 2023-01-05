@@ -207,7 +207,7 @@ namespace Sudoku_solver_API
                         File.AppendAllText(PATH,gridHTML[j] + "\n");
                     }
 
-                    File.AppendAllText(PATH,"            <p>Difficulté : " + gridPathWords[0] + "<br>Taille : "
+                    File.AppendAllText(PATH,"            <p>Difficulté : " + gridPathWords[gridPathWords.Count-1] + "<br>Taille : "
                     + Xgrid.GetLength(0) + "x" + Xgrid.GetLength(0) + "</p>");
 
                     for(int k=0; k<grid2HTML.Count;k++)
