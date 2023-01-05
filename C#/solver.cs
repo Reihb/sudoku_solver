@@ -184,8 +184,6 @@ namespace Sudoku_solver
             char[,] partialySolved = UniquePartialSolve(Xgrid,XregionTable);
             char[,] res = BruteforceSolve(partialySolved, XregionTable);
 
-            Console.Clear();
-
             Console.WriteLine("PartialAndBruteforceSolve : ");
 
             return res;
