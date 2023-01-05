@@ -33,7 +33,7 @@ class Main_program
         }
         else if(choice == 2)
         {
-            solvedGrid = Sudoku.BruteforceSolve(grid, regionTable)
+            solvedGrid = Sudoku.BruteforceSolve(grid, regionTable);
         }
         else if(choice == 3)
         {

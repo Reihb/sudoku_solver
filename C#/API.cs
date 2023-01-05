@@ -190,7 +190,7 @@ namespace Sudoku_solver_API
                 else
                 {
                     gridPathWords.Add(word);
-                    word = ""
+                    word = "";
                 }
             }
 
