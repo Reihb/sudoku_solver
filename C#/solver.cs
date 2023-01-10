@@ -515,7 +515,7 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
-        public static void UpdatePossibilitiesTable(char[,] Xgrid, int[,] XregionTable, ref List<char>[,] XposTable)
+        public static void UpdatePossibilitiesTable(char[,] Xgrid, int[,] XregionTable, List<char>[,] XposTable)
         {
             for(int i=0; i<Xgrid.GetLength(0); i++)
             {
