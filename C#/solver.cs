@@ -515,6 +515,23 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
+        public static List<char>[,] GeneratePossibilitiesTable(char[,] Xgrid, int[,] XregionTable)
+        {
+            List<char>[,] res = List<char>[Xgrid.GetLength(0),Xgrid.GetLength(1)];
+
+            for(int i=0; i<Xgrid.GetLength(0); i++)
+            {
+                for(int j=0; j<Xgrid.GetLength(1); j++)
+                {
+                    res[i,j] = GetPossibilitiesFromPos(Xgrid, XregionTable, i, j);
+                }
+            }
+
+            return res;
+        }
+
+        //---------------------------------------------------------------------------------------
+
         /*
             GenerateRegionTable : function : int[,]
                 Function that returns the region table for a given table
