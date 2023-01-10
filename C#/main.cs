@@ -39,9 +39,13 @@ class Main_program
         {
             solvedGrid = Sudoku.PartialAndBruteforceSolve(grid, regionTable);
         }
-        else
+        else if(choice == 4)
         {
             solvedGrid = Sudoku.UniquePartialSolve(grid,regionTable);
+        }
+        else
+        {
+            solvedGrid = //New method
         }
 
         Debug.ShowGrid(solvedGrid);
