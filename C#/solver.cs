@@ -517,7 +517,7 @@ namespace Sudoku_solver
 
         public static List<char>[,] GeneratePossibilitiesTable(char[,] Xgrid, int[,] XregionTable)
         {
-            List<char>[,] res = List<char>[Xgrid.GetLength(0),Xgrid.GetLength(1)];
+            List<char>[,] res = new List<char>[Xgrid.GetLength(0),Xgrid.GetLength(1)];
 
             for(int i=0; i<Xgrid.GetLength(0); i++)
             {
