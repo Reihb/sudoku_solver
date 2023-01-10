@@ -338,10 +338,17 @@ namespace Sudoku_solver
             List<char> region;
             List<char> res;
 
-            cross = GetCrossNumbers(Xgrid, i,j);
-            region = GetRegionNumbers(Xgrid, GetRegionID(XregionTable, i, j));
+            if(Xgrid[i,j] != '0')
+            {
+                cross = GetCrossNumbers(Xgrid, i,j);
+                region = GetRegionNumbers(Xgrid, GetRegionID(XregionTable, i, j));
 
-            res = GetPossibilitiesUnion(Xgrid,cross, region);
+                res = GetPossibilitiesUnion(Xgrid,cross, region);
+            }
+            else
+            {
+                res = new List<char>();
+            }
 
             return res;
         }
