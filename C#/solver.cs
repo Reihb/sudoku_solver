@@ -198,6 +198,8 @@ namespace Sudoku_solver
 
         //---------------------------------------------------------------------------------------
 
+        //---------------------------------------------------------------------------------------
+
         /*
             UniquePartialSolve : function : char[,]
                 Function that partialy solve the sudoku by filling the tiles that have only one possibility
