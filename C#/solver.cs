@@ -658,9 +658,9 @@ namespace Sudoku_solver
                 int i = (XregionID/regionHeight) * (regionHeight);
                 int j = (regionWidth * XregionID) % (regionHeight * regionWidth);
 
-                for(int a = i; a<regionHeight; a++)
+                for(int a = i; a<regionHeight+i; a++)
                 {
-                    for(int b = j; b<regionWidth; b++)
+                    for(int b = j; b<regionWidth+j; b++)
                     {
 
                         if((Xtab[a, b] == '0'))
@@ -690,9 +690,9 @@ namespace Sudoku_solver
                 }
 
                 if(found==true){
-                    for(int a = i; a<regionHeight; a++)
+                    for(int a = i; a<regionHeight+i; a++)
                     {
-                        for(int b = j; b<regionWidth; b++)
+                        for(int b = j; b<regionWidth+j; b++)
                         {
 
                             if((Possibi[a, b][0] == storedvalue))
