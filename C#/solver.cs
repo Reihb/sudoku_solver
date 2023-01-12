@@ -627,6 +627,7 @@ namespace Sudoku_solver
                 }
             }
         }
+        
         public static char[,] ResolutionUltime(char[,] Xtab, int[,] RegionTab)
         {
             int regionWidth, regionHeight;
@@ -634,10 +635,9 @@ namespace Sudoku_solver
 
             List<char>[,] Possibi = new List<char>[Xtab.GetLength(0),Xtab.GetLength(1)];
             char[,] EnCours = new char[Xtab.GetLength(0),Xtab.GetLength(1)];
-            char storedvalue='0';
+            char storedvalue = '0';
             bool found=false;
             
-
             Copy2DTableChar(Xtab,EnCours);
 
             EnCours = UniquePartialSolve(EnCours,RegionTab);
@@ -651,14 +651,14 @@ namespace Sudoku_solver
                 int i = (XregionID/regionHeight) * (regionHeight);
                 int j = (regionWidth * XregionID) % (regionHeight * regionWidth);
 
-                for(int k=0; k<regionHeight; k++)
+                for(int a = i; a<regionHeight; a++)
                 {
-                    for(int l=0; l<regionWidth; l++)
+                    for(int b = j; b<regionWidth; b++)
                     {
 
-                        if((Xtab[i+k, j+l] == '0'))
+                        if((Xtab[a, b] == '0'))
                         {
-                            foreach(char elem in Possibi[i+k,j+l] )
+                            foreach(char elem in Possibi[a,b] )
                             {
                                 if (!Compteur.ContainsKey(elem))
                                 {
@@ -683,14 +683,14 @@ namespace Sudoku_solver
                 }
 
                 if(found==true){
-                    for(int k=0; k<regionHeight; k++)
+                    for(int a = i; a<regionHeight; a++)
                     {
-                        for(int l=0; l<regionWidth; l++)
+                        for(int b = j; b<regionWidth; b++)
                         {
 
-                            if((Possibi[i+k, j+l][0] == storedvalue))
+                            if((Possibi[a, b][0] == storedvalue))
                             {
-                                Xtab[i+k,j+l]=storedvalue;
+                                Xtab[a,b]=storedvalue;
                             }
                         
                         }
@@ -700,7 +700,9 @@ namespace Sudoku_solver
                 
             }
 
-            
+            Debug.ShowGrid(EnCours);
+
+            Console.ReadLine();
 
             char[,] res=BruteforceSolve(EnCours,RegionTab);
 
