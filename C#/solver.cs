@@ -634,5 +634,68 @@ namespace Sudoku_solver
                 }
             }
         }
+        public static char[,] ResolutionUltime(char[,] Xtab, char[,] RegionTab){
+            List<char>[,] Possibi = new List<char>[Xtab.GetLength(0),Xtab.GetLength(1)];
+            char[,] EnCours = new char[Xtab.GetLength(0),Xtab.GetLength(1)];
+            Copy2DTableChar(Xtab,EnCours);
+            EnCours=UniquePartialSolve(EnCours,RegionTab);
+            UpdatePossibilitiesTable(EnCours,RegionTab,Possibi);
+            int regionWidth, regionHeight;
+            SetRegionWH(Xtab, out regionWidth, out regionHeight);
+            bool found=false;
+            char storedvalue=0;
+            for (int XregionID=0;region<Xtab.GetLength(0);region++){
+                Dictionary <char,int> Compteur= new Dictionary <char,int>();
+                int i = (XregionID/regionHeight) * (regionHeight);
+                int j = (regionWidth * XregionID) % (regionHeight * regionWidth);
+
+                for(int k=0; k<regionHeight; k++)
+                {
+                    for(int l=0; l<regionWidth; l++)
+                    {
+
+                        if((Xtab[i+k, j+l] == '0'))
+                        {
+                            foreach(char elem in Possibi[i+k,j+l] ){
+                                if (!Compteur.ContainsKey(elem)){
+                                    Compteur.Add(elem,1);
+                                }
+                                else{
+                                    Compteur[elem]=Compteur[elem]+1;
+                                }
+                            }
+                        }
+                    
+                    }
+                }
+                foreach(KeyValuePair<char,int> elem in Compteur){
+                    if(elem.Value == 1){
+                        found=true;
+                        storedvalue=elem.Key;
+                    }
+                }
+                if(found==true){
+                    for(int k=0; k<regionHeight; k++)
+                    {
+                        for(int l=0; l<regionWidth; l++)
+                        {
+
+                            if((Possibi[i+k, j+l][0] == storedvalue))
+                            {
+                                Xtab[i+k,j+l]=storedvalue;
+                            }
+                        
+                        }
+                    }
+                }
+
+                
+            }
+            char[,] res=BruteforceSolve(EnCours,RegionTab);
+            return res;
+
+            
+            
+        }
     }
 }
