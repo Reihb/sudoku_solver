@@ -23,7 +23,7 @@ class Main_program
 
         Console.WriteLine("What solving method do you want to use ?");
 
-        Console.WriteLine("-1 Blind Bruteforce\n-2 Possibilities aware Bruteforce\n-3 Possibilities aware + Partial resolution Bruteforce\n-4 Partial resolution with unique possibilities\n");
+        Console.WriteLine("-1 Blind Bruteforce\n-2 Possibilities aware Bruteforce\n-3 Possibilities aware + Partial resolution Bruteforce\n-4 Partial resolution with unique possibilities\n-5 Ultimate resolution !");
 
         choice = int.Parse(Console.ReadLine());
 
@@ -45,7 +45,7 @@ class Main_program
         }
         else
         {
-            solvedGrid = //New method
+            solvedGrid = Sudoku.ResolutionUltime(grid,regionTable);
         }
 
         Debug.ShowGrid(solvedGrid);

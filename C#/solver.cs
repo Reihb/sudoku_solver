@@ -634,18 +634,27 @@ namespace Sudoku_solver
                 }
             }
         }
-        public static char[,] ResolutionUltime(char[,] Xtab, char[,] RegionTab){
-            List<char>[,] Possibi = new List<char>[Xtab.GetLength(0),Xtab.GetLength(1)];
-            char[,] EnCours = new char[Xtab.GetLength(0),Xtab.GetLength(1)];
-            Copy2DTableChar(Xtab,EnCours);
-            EnCours=UniquePartialSolve(EnCours,RegionTab);
-            UpdatePossibilitiesTable(EnCours,RegionTab,Possibi);
+        public static char[,] ResolutionUltime(char[,] Xtab, char[,] RegionTab)
+        {
             int regionWidth, regionHeight;
             SetRegionWH(Xtab, out regionWidth, out regionHeight);
-            bool found=false;
+
+            List<char>[,] Possibi = new List<char>[Xtab.GetLength(0),Xtab.GetLength(1)];
+            char[,] EnCours = new char[Xtab.GetLength(0),Xtab.GetLength(1)];
             char storedvalue=0;
-            for (int XregionID=0;region<Xtab.GetLength(0);region++){
+            bool found=false;
+            
+
+            Copy2DTableChar(Xtab,EnCours);
+
+            EnCours = UniquePartialSolve(EnCours,RegionTab);
+
+            UpdatePossibilitiesTable(EnCours,RegionTab,Possibi);
+            
+            for (int XregionID=0;region<Xtab.GetLength(0);region++)
+            {
                 Dictionary <char,int> Compteur= new Dictionary <char,int>();
+
                 int i = (XregionID/regionHeight) * (regionHeight);
                 int j = (regionWidth * XregionID) % (regionHeight * regionWidth);
 
@@ -656,11 +665,15 @@ namespace Sudoku_solver
 
                         if((Xtab[i+k, j+l] == '0'))
                         {
-                            foreach(char elem in Possibi[i+k,j+l] ){
-                                if (!Compteur.ContainsKey(elem)){
+                            foreach(char elem in Possibi[i+k,j+l] )
+                            {
+                                if (!Compteur.ContainsKey(elem))
+                                {
                                     Compteur.Add(elem,1);
                                 }
-                                else{
+
+                                else
+                                {
                                     Compteur[elem]=Compteur[elem]+1;
                                 }
                             }
@@ -668,12 +681,14 @@ namespace Sudoku_solver
                     
                     }
                 }
+
                 foreach(KeyValuePair<char,int> elem in Compteur){
                     if(elem.Value == 1){
                         found=true;
                         storedvalue=elem.Key;
                     }
                 }
+
                 if(found==true){
                     for(int k=0; k<regionHeight; k++)
                     {
@@ -691,11 +706,10 @@ namespace Sudoku_solver
 
                 
             }
-            char[,] res=BruteforceSolve(EnCours,RegionTab);
-            return res;
 
-            
-            
+            char[,] res=BruteforceSolve(EnCours,RegionTab);
+
+            return res;
         }
     }
 }
