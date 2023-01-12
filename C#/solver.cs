@@ -634,7 +634,7 @@ namespace Sudoku_solver
                 }
             }
         }
-        public static char[,] ResolutionUltime(char[,] Xtab, char[,] RegionTab)
+        public static char[,] ResolutionUltime(char[,] Xtab, int[,] RegionTab)
         {
             int regionWidth, regionHeight;
             SetRegionWH(Xtab, out regionWidth, out regionHeight);
