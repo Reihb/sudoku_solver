@@ -338,17 +338,10 @@ namespace Sudoku_solver
             List<char> region;
             List<char> res;
 
-            if(Xgrid[i,j] != '0')
-            {
-                cross = GetCrossNumbers(Xgrid, i,j);
-                region = GetRegionNumbers(Xgrid, GetRegionID(XregionTable, i, j));
+            cross = GetCrossNumbers(Xgrid, i,j);
+            region = GetRegionNumbers(Xgrid, GetRegionID(XregionTable, i, j));
 
-                res = GetPossibilitiesUnion(Xgrid,cross, region);
-            }
-            else
-            {
-                res = new List<char>();
-            }
+            res = GetPossibilitiesUnion(Xgrid,cross, region);
 
             return res;
         }
@@ -641,7 +634,7 @@ namespace Sudoku_solver
 
             List<char>[,] Possibi = new List<char>[Xtab.GetLength(0),Xtab.GetLength(1)];
             char[,] EnCours = new char[Xtab.GetLength(0),Xtab.GetLength(1)];
-            char storedvalue=0;
+            char storedvalue='0';
             bool found=false;
             
 
@@ -651,7 +644,7 @@ namespace Sudoku_solver
 
             UpdatePossibilitiesTable(EnCours,RegionTab,Possibi);
             
-            for (int XregionID=0;region<Xtab.GetLength(0);region++)
+            for (int XregionID=0;XregionID<Xtab.GetLength(0);XregionID++)
             {
                 Dictionary <char,int> Compteur= new Dictionary <char,int>();
 
@@ -706,6 +699,8 @@ namespace Sudoku_solver
 
                 
             }
+
+            
 
             char[,] res=BruteforceSolve(EnCours,RegionTab);
 
