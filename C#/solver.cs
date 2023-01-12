@@ -341,7 +341,14 @@ namespace Sudoku_solver
             cross = GetCrossNumbers(Xgrid, i,j);
             region = GetRegionNumbers(Xgrid, GetRegionID(XregionTable, i, j));
 
-            res = GetPossibilitiesUnion(Xgrid,cross, region);
+            if(Xgrid[i,j] == '0')
+            {
+                res = GetPossibilitiesUnion(Xgrid,cross, region);
+            }
+            else
+            {
+                res = new List<char>(){'X'};
+            }
 
             return res;
         }
